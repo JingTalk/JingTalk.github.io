@@ -1,0 +1,1087 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="interview," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JING BLOG" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="WearSport
+
+GPS打点数据爆表打点采样优化动画卡顿">
+<meta property="og:type" content="article">
+<meta property="og:title" content="问题汇总">
+<meta property="og:url" content="http://yoursite.com/2017/01/12/2017-1-12-interview-problem/index.html">
+<meta property="og:site_name" content="JING BLOG">
+<meta property="og:description" content="WearSport
+
+GPS打点数据爆表打点采样优化动画卡顿">
+<meta property="og:updated_time" content="2017-05-16T04:37:44.343Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="问题汇总">
+<meta name="twitter:description" content="WearSport
+
+GPS打点数据爆表打点采样优化动画卡顿">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '13053799',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/12/2017-1-12-interview-problem/"/>
+
+
+
+
+
+  <title> 问题汇总 | JING BLOG </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9875d970241b723c644ff221fdd14a6e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JING BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">認真的人生很高級</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/12/2017-1-12-interview-problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JING.HUANG">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JING BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                问题汇总
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-12T19:07:05+08:00">
+                2017-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/12/2017-1-12-interview-problem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/12/2017-1-12-interview-problem/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/01/12/2017-1-12-interview-problem/" class="leancloud_visitors" data-flag-title="问题汇总">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><strong>WearSport</strong></p>
+</blockquote>
+<h1 id="GPS打点数据爆表"><a href="#GPS打点数据爆表" class="headerlink" title="GPS打点数据爆表"></a>GPS打点数据爆表</h1><h1 id="打点采样优化"><a href="#打点采样优化" class="headerlink" title="打点采样优化"></a>打点采样优化</h1><h1 id="动画卡顿"><a href="#动画卡顿" class="headerlink" title="动画卡顿"></a>动画卡顿</h1><a id="more"></a>
+<blockquote>
+<p><strong>PhoneSport</strong></p>
+</blockquote>
+<h1 id="View绘制"><a href="#View绘制" class="headerlink" title="View绘制"></a>View绘制</h1><blockquote>
+<p><strong>WatchMusicPlayer</strong></p>
+</blockquote>
+<h1 id="三方框架实现"><a href="#三方框架实现" class="headerlink" title="三方框架实现"></a>三方框架实现</h1><h1 id="第三方音乐适配"><a href="#第三方音乐适配" class="headerlink" title="第三方音乐适配"></a>第三方音乐适配</h1><h1 id="表盘控制"><a href="#表盘控制" class="headerlink" title="表盘控制"></a>表盘控制</h1><blockquote>
+<p><strong>Unity3D</strong></p>
+</blockquote>
+<h1 id="NGUI"><a href="#NGUI" class="headerlink" title="NGUI"></a>NGUI</h1><h1 id="NetworkView"><a href="#NetworkView" class="headerlink" title="NetworkView"></a>NetworkView</h1><blockquote>
+<p><strong>快鸟</strong></p>
+</blockquote>
+<h1 id="启动页优化"><a href="#启动页优化" class="headerlink" title="启动页优化"></a>启动页优化</h1><p><em>跳出率是指在只访问了入口页面（例如网站首页）就离开的访问量与所产生总访问量的百分比</em><br><a href="http://blog.csdn.net/qq_23547831/article/details/51541277" target="_blank" rel="external">启动页优化策略</a></p>
+<h1 id="引导页优化"><a href="#引导页优化" class="headerlink" title="引导页优化"></a>引导页优化</h1><blockquote>
+<p><strong> MIUI项目组</strong></p>
+</blockquote>
+<h1 id="Token刷新"><a href="#Token刷新" class="headerlink" title="Token刷新"></a>Token刷新</h1><h1 id="流量查询"><a href="#流量查询" class="headerlink" title="流量查询"></a>流量查询</h1><h1 id="CDN加速"><a href="#CDN加速" class="headerlink" title="CDN加速"></a>CDN加速</h1><h1 id="偷跑流量"><a href="#偷跑流量" class="headerlink" title="偷跑流量"></a>偷跑流量</h1><h1 id="加速效果不理想"><a href="#加速效果不理想" class="headerlink" title="加速效果不理想"></a>加速效果不理想</h1><blockquote>
+<p><strong>秀吧</strong></p>
+</blockquote>
+<h1 id="音视频上行预研"><a href="#音视频上行预研" class="headerlink" title="音视频上行预研"></a>音视频上行预研</h1><h2 id="Android终端设备视频直播上行发布"><a href="#Android终端设备视频直播上行发布" class="headerlink" title="Android终端设备视频直播上行发布"></a>Android终端设备视频直播上行发布</h2><blockquote>
+<p>方案1：视频采集 + RTMP</p>
+</blockquote>
+<p>视频采集方法可二选一， Android版本的RTMP协议有多种开源实现，常用的有下面三种：</p>
+<p>RED5：比较主流开源实现，网上有对应的开源project实现 android-recorder，这个版本的实现要求客户端与服务器端的RTMP版本兼容，否则客户端在连接成功后在开始创建流的时候，服务端把连接断开了，这个已在我们自己的服务器上验证，是匹配的;</p>
+<p>国内开源project中采用的 android-rtmp-client，它是上面red5的精简版，编码上没有前者这么麻烦，存在的问题同上;</p>
+<p>国外收费的rtmpclient，申请注册码或者进行破解，这个已有牛人提供了破解教程，并且提供下载，可以直接使用，这个有待验证。</p>
+<blockquote>
+<p>方案2：视频采集 + ffmpeg + RTMP（待测）</p>
+</blockquote>
+<p>FFMPEG在linux、windows平台上运行良好，能进行视频采集，编解码、播放以及流化能力，但在Android平台，使用最多的还它的播放、编解码能力。而视频采集一般使用已介绍的二种方式，目前要探究的课题是在Android平台，如何通过ffmpeg来发布视频。</p>
+<p>FFMPEG是支持RTMP协议的，所以在linux/windows平台能通过以下方式来发布视频，实现直播。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -t 10 <span class="_">-f</span> video4linux2 <span class="_">-s</span> 176*144 -r 8 -i /dev/video0 -vcodec h263 <span class="_">-f</span> rtp rtp://192.168.1.105:5060 &gt; /tmp/ffmpeg.sdp</div></pre></td></tr></table></figure></p>
+<p>目前Android上的ffmpeg移植也有很多参考材料，但甚少提及其发布功能，这部分需要深入阅读ffmpeg的源码，才能看到其流化接口，然后再发布。</p>
+<h2 id="视频采集"><a href="#视频采集" class="headerlink" title="视频采集"></a>视频采集</h2><p>前后摄像头可以正常切换，目前是通过前置摄像头来采集数据</p>
+<blockquote>
+<p>Camera + PreviewCallback（Interface）</p>
+</blockquote>
+<pre><code>所采集的视频数据一般在PreviewCallback 的实现函数中获取。
+public void onPreviewFrame(byte[] data, Camera camera)
+该data数据为YUV格式的原始视频帧数据，一般为YUV420SP，这里要完成 yuv-&gt;rgb-&gt;视频流的转化过程（这块儿的具体过程还并不非常清晰）
+并且音视频数据是没有经过编码处理的，此处可以使用第三方编码库来处理，如果ffmpeg、或者x264、AAC编码后再发布
+</code></pre><blockquote>
+<p>Camera + MediaRecorder</p>
+</blockquote>
+<pre><code>通过MediaRecorder获取的视频数据是已经编码过后的数据，在获取视频数据之前可以指定音视频编码格式，输出格式
+支持 本地存储 + 远程输出
+</code></pre><h2 id="视频播放"><a href="#视频播放" class="headerlink" title="视频播放"></a>视频播放</h2><p>由于目前的Android秀吧终端是能进行视频下行直播的，用的是ffmpeg，关于播放，此处不考虑</p>
+<h2 id="视频发布RTMP"><a href="#视频发布RTMP" class="headerlink" title="视频发布RTMP"></a>视频发布RTMP</h2><blockquote>
+<p>方法1：开源red5</p>
+</blockquote>
+<p>demo1视频采集使用mediarecorder， 目前按照 RTMP协议，以下流程能正常走通</p>
+<p>1&gt;Client→Server :发送一个与流媒体服务器建立连接的请求.<br>2&gt;Server→Client : 服务器确认建立连接<br>3&gt;Client→Server : 发送一个创建流的请求<br>4&gt;Server→Client :服务器确认流请求，并返回一个表示流的索引号.<br>5&gt;Client→Server :提交一个发布数据的请求<br>6&gt;Server→Client ：服务器确认数据发布请求<br>7&gt;Client→Server :发送视音频数据包(这些包在同一个频道(channel)并用流的索引号来唯一标识).  </p>
+<p>问题：demo在完成视频录制以后，再将视频发到服务器，在上面的第7步中，视频发布以后，服务器的解包有问题，定位应该是RTMP视频打包有问题，目前想把这一整套流程走通。</p>
+<p>后面再实时发包看看视频效果</p>
+<blockquote>
+<p>方法2：开源red5精简版 android-rtmp-client</p>
+</blockquote>
+<p>面临的问题同上</p>
+<blockquote>
+<p>方法3：rtmpclient破解版</p>
+</blockquote>
+<p>demo2视频采集使用 PreviewCallback， rtmp使用破解版的rtmpclient</p>
+<p>1&gt; RTMP</p>
+<p>2&gt; FFMPEG</p>
+<blockquote>
+<p><strong>Android机顶盒</strong></p>
+</blockquote>
+<h1 id="Setting、Framework定制"><a href="#Setting、Framework定制" class="headerlink" title="Setting、Framework定制"></a>Setting、Framework定制</h1><h1 id="Launcher开发、焦点框特效重绘、滑动延时、按键屏蔽"><a href="#Launcher开发、焦点框特效重绘、滑动延时、按键屏蔽" class="headerlink" title="Launcher开发、焦点框特效重绘、滑动延时、按键屏蔽"></a>Launcher开发、焦点框特效重绘、滑动延时、按键屏蔽</h1><h1 id="设备主控、界面提示框"><a href="#设备主控、界面提示框" class="headerlink" title="设备主控、界面提示框"></a>设备主控、界面提示框</h1><h1 id="升级、JAVA-C同步"><a href="#升级、JAVA-C同步" class="headerlink" title="升级、JAVA/C同步"></a>升级、JAVA/C同步</h1>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/interview/" rel="tag"># interview</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/11/2017-1-11-android-start/" rel="next" title="Android 应用启动时序图">
+                <i class="fa fa-chevron-left"></i> Android 应用启动时序图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/18/2017-1-18-butterknife/" rel="prev" title="AS 中 Butter Knife 使用详解">
+                AS 中 Butter Knife 使用详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/01/12/2017-1-12-interview-problem/"
+     data-title="问题汇总"
+     data-content=""
+     data-url="http://yoursite.com/2017/01/12/2017-1-12-interview-problem/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/12/2017-1-12-interview-problem/"
+           data-title="问题汇总" data-url="http://yoursite.com/2017/01/12/2017-1-12-interview-problem/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="JING.HUANG" />
+          <p class="site-author-name" itemprop="name">JING.HUANG</p>
+           
+              <p class="site-description motion-element" itemprop="description">認真的人生很高級</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jingtalk" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/dogxiaobai" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/jingtalk" target="_blank" title="Coding.net">
+                  
+                    <i class="fa fa-fw fa-gitlab"></i>
+                  
+                  Coding.net
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://500px.com/popular" title="500PX" target="_blank">500PX</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://fontawesome.io/icons/" title="FontAwsome.Icons" target="_blank">FontAwsome.Icons</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/" title="Hexo.doc" target="_blank">Hexo.doc</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="Hexo.next.theme.doc" target="_blank">Hexo.next.theme.doc</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/iissnan/hexo-theme-next/issues" title="Next.theme.Issue" target="_blank">Next.theme.Issue</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.apple.com/" title="Apple developer" target="_blank">Apple developer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://android.googlesource.com/platform/frameworks/" title="AOSP" target="_blank">AOSP</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.android.com/reference/packages.html" title="Android api" target="_blank">Android api</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.android.google.cn/guide/index.html" title="Android api[China]" target="_blank">Android api[China]</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developers.google.cn/" title="Google Developers[China]" target="_blank">Google Developers[China]</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.androidweekly.cn/" title="Android开发技术周报" target="_blank">Android开发技术周报</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.androiddevtools.cn/" title="AndroidDevTools" target="_blank">AndroidDevTools</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.androidblog.cn/" title="Android Blog 周刊" target="_blank">Android Blog 周刊</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.android-studio.org/index.php" title="AS.org" target="_blank">AS.org</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://p.codekk.com/" title="codeKK" target="_blank">codeKK</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://stormzhang.com/" title="stormzhang" target="_blank">stormzhang</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GPS打点数据爆表"><span class="nav-number">1.</span> <span class="nav-text">GPS打点数据爆表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打点采样优化"><span class="nav-number">2.</span> <span class="nav-text">打点采样优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动画卡顿"><span class="nav-number">3.</span> <span class="nav-text">动画卡顿</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#View绘制"><span class="nav-number">4.</span> <span class="nav-text">View绘制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三方框架实现"><span class="nav-number">5.</span> <span class="nav-text">三方框架实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三方音乐适配"><span class="nav-number">6.</span> <span class="nav-text">第三方音乐适配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表盘控制"><span class="nav-number">7.</span> <span class="nav-text">表盘控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NGUI"><span class="nav-number">8.</span> <span class="nav-text">NGUI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NetworkView"><span class="nav-number">9.</span> <span class="nav-text">NetworkView</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动页优化"><span class="nav-number">10.</span> <span class="nav-text">启动页优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引导页优化"><span class="nav-number">11.</span> <span class="nav-text">引导页优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Token刷新"><span class="nav-number">12.</span> <span class="nav-text">Token刷新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流量查询"><span class="nav-number">13.</span> <span class="nav-text">流量查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CDN加速"><span class="nav-number">14.</span> <span class="nav-text">CDN加速</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#偷跑流量"><span class="nav-number">15.</span> <span class="nav-text">偷跑流量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加速效果不理想"><span class="nav-number">16.</span> <span class="nav-text">加速效果不理想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#音视频上行预研"><span class="nav-number">17.</span> <span class="nav-text">音视频上行预研</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android终端设备视频直播上行发布"><span class="nav-number">17.1.</span> <span class="nav-text">Android终端设备视频直播上行发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频采集"><span class="nav-number">17.2.</span> <span class="nav-text">视频采集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频播放"><span class="nav-number">17.3.</span> <span class="nav-text">视频播放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频发布RTMP"><span class="nav-number">17.4.</span> <span class="nav-text">视频发布RTMP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Setting、Framework定制"><span class="nav-number">18.</span> <span class="nav-text">Setting、Framework定制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Launcher开发、焦点框特效重绘、滑动延时、按键屏蔽"><span class="nav-number">19.</span> <span class="nav-text">Launcher开发、焦点框特效重绘、滑动延时、按键屏蔽</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设备主控、界面提示框"><span class="nav-number">20.</span> <span class="nav-text">设备主控、界面提示框</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#升级、JAVA-C同步"><span class="nav-number">21.</span> <span class="nav-text">升级、JAVA/C同步</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JING.HUANG</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jingtalk"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Hbx2xJ44UJlxMR8oLKBpvGqs-gzGzoHsz", "JjTvpDNwA9ObdYshw4zaBpeF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

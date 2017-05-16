@@ -1,0 +1,1083 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="svn," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JING BLOG" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="SVN常用命令速查表  
+
+下载代码12svn checkout svn://192.168.1.1/pro/domainsvn co path // 简写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVN 命令速查">
+<meta property="og:url" content="http://yoursite.com/2017/03/14/2017-3-14-svn/index.html">
+<meta property="og:site_name" content="JING BLOG">
+<meta property="og:description" content="SVN常用命令速查表  
+
+下载代码12svn checkout svn://192.168.1.1/pro/domainsvn co path // 简写">
+<meta property="og:updated_time" content="2017-05-16T04:37:44.343Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SVN 命令速查">
+<meta name="twitter:description" content="SVN常用命令速查表  
+
+下载代码12svn checkout svn://192.168.1.1/pro/domainsvn co path // 简写">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '13053799',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/14/2017-3-14-svn/"/>
+
+
+
+
+
+  <title> SVN 命令速查 | JING BLOG </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9875d970241b723c644ff221fdd14a6e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JING BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">認真的人生很高級</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/2017-3-14-svn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JING.HUANG">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JING BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SVN 命令速查
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T19:28:24+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/14/2017-3-14-svn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/2017-3-14-svn/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/03/14/2017-3-14-svn/" class="leancloud_visitors" data-flag-title="SVN 命令速查">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>SVN常用命令速查表  </p>
+</blockquote>
+<h1 id="下载代码"><a href="#下载代码" class="headerlink" title="下载代码"></a>下载代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn checkout svn://192.168.1.1/pro/domain</div><div class="line">svn co path // 简写</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="更新代码"><a href="#更新代码" class="headerlink" title="更新代码"></a>更新代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn update  // 将当前目录以及子目录下的所有文件都更新到最新版本</div><div class="line">svn update -r 200 test.java // 将test.java更新到版本200</div></pre></td></tr></table></figure>
+<h1 id="本地代码回退"><a href="#本地代码回退" class="headerlink" title="本地代码回退"></a>本地代码回退</h1><p>修改过的东西没有递交，这种情况下revert会取消之前的修改。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn revert test.java</div></pre></td></tr></table></figure></p>
+<p>如果是将路径path下面所有的代码取消修改，需要加上 -R 参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn revert -R path</div><div class="line">svn revert // 回退当前目录下的所有文件</div></pre></td></tr></table></figure></p>
+<h1 id="线上代码回退"><a href="#线上代码回退" class="headerlink" title="线上代码回退"></a>线上代码回退</h1><p>如果改动的东西已经提交了，这个时候需要使用merge来处理<br>步骤如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">svn update                      // 确认代码最新</div><div class="line">svn <span class="built_in">log</span> test.java</div><div class="line">svn <span class="built_in">log</span> path                    // 通过<span class="built_in">log</span>命令获取版本号</div><div class="line">svn merge -r 20:10 test.java</div><div class="line">svn merge -r 20:10 path         // 合并修改到本地文件</div><div class="line">svn ci -m <span class="string">"rollback code"</span>       // 提交修改合并上传到线上</div></pre></td></tr></table></figure></p>
+<h1 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h1><p>冲突发生时一般会有如下提示信息:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Conflict discovered <span class="keyword">in</span> file <span class="string">'app\app.iml'</span>.</div><div class="line">Select: (p) postpone, (df) show diff, (e) edit file, (m) merge,</div><div class="line">        (mc) my side of conflict, (tc) their side of conflict,</div><div class="line">        (s) show all options:</div></pre></td></tr></table></figure></p>
+<p>相关的解释如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(p) postpone          暂时推后处理，我可能要和那个和我冲突的家伙商量一番</div><div class="line">(df) diff-full        把所有的修改列出来，比比看</div><div class="line">(e) edit              直接编辑冲突的文件</div><div class="line">(mc) mine-conflict    如果你很有自信可以只用你的修改，把别人的修改干掉</div><div class="line">(tc) theirs-conflict  底气不足，还是用别人修改的吧</div><div class="line">(s) show all options  显示其他可用的命令</div></pre></td></tr></table></figure></p>
+<h1 id="移除冲突"><a href="#移除冲突" class="headerlink" title="移除冲突"></a>移除冲突</h1><p>当执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">svn update</div><div class="line">C test.java</div><div class="line">Updated to revision 31.</div></pre></td></tr></table></figure></p>
+<p>此时工作区会产生三个新文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ls</div><div class="line">test.java</div><div class="line">test.java.mine</div><div class="line">test.java.r30</div><div class="line">test.java.r31</div></pre></td></tr></table></figure></p>
+<p>当解决了test.java的冲突，运行svn resolved让你的工作拷贝知道你已经完成了所有事情。<br>然后再 commit。</p>
+<p>当然也可以仅仅删除冲突的文件并且提交，但是 svn resolved 除了删除冲突文件，还修正了一些记录在工作拷贝管理区域的记录数据，推荐你使用这个命令。</p>
+<h1 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn add test.java // 往版本库中添加文件</div><div class="line">svn commit -m <span class="string">"add test file to svn"</span> test.java  // 提交修改</div></pre></td></tr></table></figure>
+<h1 id="加锁-解锁"><a href="#加锁-解锁" class="headerlink" title="加锁/解锁"></a>加锁/解锁</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">svn lock -m <span class="string">"lock test file"</span> test.java</div><div class="line">svn unlock test.java</div><div class="line">svn unlock path</div></pre></td></tr></table></figure>
+<h1 id="查看文件目录状态"><a href="#查看文件目录状态" class="headerlink" title="查看文件目录状态"></a>查看文件目录状态</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn status // 查看当前目录下文件及子目录的状态，正常状态不显示</div><div class="line">svn status path // 查看path目录下文件及子目录的状态，正常状态不显示</div></pre></td></tr></table></figure>
+<p>相关图标解释如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">?：不在svn的控制中；</div><div class="line">M：内容被修改；</div><div class="line">C：发生冲突；</div><div class="line">A：预定加入到版本库；</div><div class="line">K：被锁定</div></pre></td></tr></table></figure></p>
+<p>加参数v后，显示版本号、修改人及文件路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">svn status -v path // 显示文件和子目录状态（显示所有文件状态）</div><div class="line">6514     6506 jingtalk     .</div><div class="line">6514     6481 jingtalk    androidTest</div><div class="line">6514     6481 jingtalk    androidTest\java</div><div class="line">6514     6481 jingtalk    androidTest\java\com</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>查找某类修改的情况，比如只查找修改的gradle文件，加上参数 “| grep gradle”</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">svn status | grep gradle</div><div class="line">M       Login\facebooklogin\build.gradle</div><div class="line">?       Samples\IMSDKSample\.gradle</div><div class="line">M       Samples\IMSDKSample\build.gradle</div><div class="line">M       Samples\IMSDKSample\gradle.properties</div></pre></td></tr></table></figure>
+<h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">svn delete svn://192.168.1.1/pro/domain/test.java -m <span class="string">"delete test file"</span> // 删除svn文件</div><div class="line">// 或者</div><div class="line">svn delete test.java</div><div class="line">svn ci -m <span class="string">"delete test file"</span></div><div class="line"></div><div class="line">svn del</div><div class="line">svn rm</div><div class="line">svn remove</div></pre></td></tr></table></figure>
+<h1 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h1><p>显示这个文件或者目录的所有修改记录，及其版本号的变化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn <span class="built_in">log</span> path</div><div class="line">svn <span class="built_in">log</span> test.java</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>显示svn最近的5条日志，这个很有用</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn <span class="built_in">log</span> --limit 5</div><div class="line">svn <span class="built_in">log</span> <span class="_">-l</span> 5</div></pre></td></tr></table></figure>
+<h1 id="查看文件详细信息"><a href="#查看文件详细信息" class="headerlink" title="查看文件详细信息"></a>查看文件详细信息</h1><p>显示这个文件或者目录的SVN地址、本地信息、版本、最近修改人及修改记录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn info path</div><div class="line">svn info test.java</div></pre></td></tr></table></figure></p>
+<h1 id="比较差异"><a href="#比较差异" class="headerlink" title="比较差异"></a>比较差异</h1><ul>
+<li>对比本地版本与线上版本</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn diff path</div><div class="line">svn diff test.java</div></pre></td></tr></table></figure>
+<p>如下，通过+/-号来区分修改<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ svn diff build.gradle</div><div class="line">Index: build.gradle</div><div class="line">===================================================================</div><div class="line">--- build.gradle        (revision 6514)</div><div class="line">+++ build.gradle        (working copy)</div><div class="line">@@ -50,7 +50,7 @@</div><div class="line">     leakCanaryVersion = <span class="string">'1.3.1'</span></div><div class="line"></div><div class="line">     // Third Channel Libraries</div><div class="line">-    facebookVersion = <span class="string">'4.6.0'</span></div><div class="line">+    facebookVersion = <span class="string">'4.20.0'</span></div><div class="line">     googleVersion = <span class="string">'8.1.0'</span></div><div class="line"></div><div class="line">     adjustVersion = <span class="string">"4.11.0"</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>对比两个版本之前的区别</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn diff -r 200:201 test.java</div></pre></td></tr></table></figure>
+<h1 id="合并差异"><a href="#合并差异" class="headerlink" title="合并差异"></a>合并差异</h1><p>将两个版本之间的差异合并到当前文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn merge -r 200:205 test.java</div></pre></td></tr></table></figure></p>
+<h1 id="SVN-帮助"><a href="#SVN-帮助" class="headerlink" title="SVN 帮助"></a>SVN 帮助</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn <span class="built_in">help</span></div><div class="line">svn <span class="built_in">help</span> commit</div></pre></td></tr></table></figure>
+<h1 id="SVN-list"><a href="#SVN-list" class="headerlink" title="SVN list"></a>SVN list</h1><p>查看path路径下所有属于版本库的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">svn list path</div><div class="line">svn ls</div><div class="line"></div><div class="line">// 显示当前base目录子目录的svn情况</div><div class="line">svn ls base</div><div class="line">.gitignore</div><div class="line">base.iml</div><div class="line">build.gradle</div><div class="line">jni/</div><div class="line">libs/</div><div class="line">proguard-rules.pro</div><div class="line">src/</div></pre></td></tr></table></figure></p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p><a href="https://wenku.baidu.com/view/511a7d29ed630b1c59eeb5f3.html?re=view" target="_blank" rel="external">SVN命令行模式的操作命令教程(各种SVN命令)</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/svn/" rel="tag"># svn</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/06/2017-3-6-gradle/" rel="next" title="Gradle 使用攻略">
+                <i class="fa fa-chevron-left"></i> Gradle 使用攻略
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/28/2017-3-28-as-test/" rel="prev" title="AS 自动化测试">
+                AS 自动化测试 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/14/2017-3-14-svn/"
+     data-title="SVN 命令速查"
+     data-content=""
+     data-url="http://yoursite.com/2017/03/14/2017-3-14-svn/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/14/2017-3-14-svn/"
+           data-title="SVN 命令速查" data-url="http://yoursite.com/2017/03/14/2017-3-14-svn/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="JING.HUANG" />
+          <p class="site-author-name" itemprop="name">JING.HUANG</p>
+           
+              <p class="site-description motion-element" itemprop="description">認真的人生很高級</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jingtalk" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/dogxiaobai" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/jingtalk" target="_blank" title="Coding.net">
+                  
+                    <i class="fa fa-fw fa-gitlab"></i>
+                  
+                  Coding.net
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://500px.com/popular" title="500PX" target="_blank">500PX</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://fontawesome.io/icons/" title="FontAwsome.Icons" target="_blank">FontAwsome.Icons</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/" title="Hexo.doc" target="_blank">Hexo.doc</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="Hexo.next.theme.doc" target="_blank">Hexo.next.theme.doc</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/iissnan/hexo-theme-next/issues" title="Next.theme.Issue" target="_blank">Next.theme.Issue</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.apple.com/" title="Apple developer" target="_blank">Apple developer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://android.googlesource.com/platform/frameworks/" title="AOSP" target="_blank">AOSP</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.android.com/reference/packages.html" title="Android api" target="_blank">Android api</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.android.google.cn/guide/index.html" title="Android api[China]" target="_blank">Android api[China]</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developers.google.cn/" title="Google Developers[China]" target="_blank">Google Developers[China]</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.androidweekly.cn/" title="Android开发技术周报" target="_blank">Android开发技术周报</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.androiddevtools.cn/" title="AndroidDevTools" target="_blank">AndroidDevTools</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.androidblog.cn/" title="Android Blog 周刊" target="_blank">Android Blog 周刊</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.android-studio.org/index.php" title="AS.org" target="_blank">AS.org</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://p.codekk.com/" title="codeKK" target="_blank">codeKK</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://stormzhang.com/" title="stormzhang" target="_blank">stormzhang</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载代码"><span class="nav-number">1.</span> <span class="nav-text">下载代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新代码"><span class="nav-number">2.</span> <span class="nav-text">更新代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地代码回退"><span class="nav-number">3.</span> <span class="nav-text">本地代码回退</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线上代码回退"><span class="nav-number">4.</span> <span class="nav-text">线上代码回退</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决冲突"><span class="nav-number">5.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#移除冲突"><span class="nav-number">6.</span> <span class="nav-text">移除冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提交代码"><span class="nav-number">7.</span> <span class="nav-text">提交代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加锁-解锁"><span class="nav-number">8.</span> <span class="nav-text">加锁/解锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看文件目录状态"><span class="nav-number">9.</span> <span class="nav-text">查看文件目录状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除文件"><span class="nav-number">10.</span> <span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看日志"><span class="nav-number">11.</span> <span class="nav-text">查看日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看文件详细信息"><span class="nav-number">12.</span> <span class="nav-text">查看文件详细信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较差异"><span class="nav-number">13.</span> <span class="nav-text">比较差异</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合并差异"><span class="nav-number">14.</span> <span class="nav-text">合并差异</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVN-帮助"><span class="nav-number">15.</span> <span class="nav-text">SVN 帮助</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVN-list"><span class="nav-number">16.</span> <span class="nav-text">SVN list</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">17.</span> <span class="nav-text">引用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JING.HUANG</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jingtalk"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Hbx2xJ44UJlxMR8oLKBpvGqs-gzGzoHsz", "JjTvpDNwA9ObdYshw4zaBpeF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
