@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/03/28/2017-3-28-as-test/</loc>
+    
+    <lastmod>2017-05-17T11:50:15.143Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2017-05-16T07:12:27.199Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2017-05-16T04:37:44.390Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/12/18/2016-12-18-git-study/</loc>
-    
-    <lastmod>2017-05-16T04:37:44.343Z</lastmod>
     
   </url>
   
@@ -121,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/28/2017-3-28-as-test/</loc>
+    <loc>http://yoursite.com/2015/11/21/2015-11-21-hello-hexo/</loc>
     
     <lastmod>2017-05-16T04:37:44.343Z</lastmod>
     
@@ -142,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2015/11/21/2015-11-21-hello-hexo/</loc>
+    <loc>http://yoursite.com/2016/12/18/2016-12-18-git-study/</loc>
     
     <lastmod>2017-05-16T04:37:44.343Z</lastmod>
     
