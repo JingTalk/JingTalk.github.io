@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-16T04:37:44.343Z</updated>
+  <updated>2017-06-02T08:45:06.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://yoursite.com/2017/04/10/2017-4-10-webview/"/>
     <id>http://yoursite.com/2017/04/10/2017-4-10-webview/</id>
     <published>2017-04-10T11:39:07.000Z</published>
-    <updated>2017-05-16T04:37:44.343Z</updated>
+    <updated>2017-06-02T08:45:06.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>WebView骨灰级教程…持续整理中…</p>
+<p>WebView开发教程…持续整理中…</p>
 </blockquote>
 <h1 id="WebView-简介"><a href="#WebView-简介" class="headerlink" title="WebView 简介"></a>WebView 简介</h1><p>WebView 提供了四个配置类来定制 WebView 的各种行为及表现，分别是：</p>
 <ol>
@@ -48,7 +48,7 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;WebView骨灰级教程…持续整理中…&lt;/p&gt;
+&lt;p&gt;WebView开发教程…持续整理中…&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;WebView-简介&quot;&gt;&lt;a href=&quot;#WebView-简介&quot; class=&quot;headerlink&quot; title=&quot;WebView 简介&quot;&gt;&lt;/a&gt;WebView 简介&lt;/h1&gt;&lt;p&gt;WebView 提供了四个配置类来定制 WebView 的各种行为及表现，分别是：&lt;/p&gt;
 &lt;ol&gt;

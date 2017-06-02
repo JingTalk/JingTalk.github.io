@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/04/10/2017-4-10-webview/</loc>
+    
+    <lastmod>2017-06-02T08:45:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/03/28/2017-3-28-as-test/</loc>
     
     <lastmod>2017-05-31T06:24:54.158Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2017-05-16T04:37:44.390Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/12/22/2016-12-22-sport-architecture/</loc>
-    
-    <lastmod>2017-05-16T04:37:44.343Z</lastmod>
     
   </url>
   
@@ -114,14 +114,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/04/10/2017-4-10-webview/</loc>
+    <loc>http://yoursite.com/2015/11/21/2015-11-21-hello-hexo/</loc>
     
     <lastmod>2017-05-16T04:37:44.343Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2015/11/21/2015-11-21-hello-hexo/</loc>
+    <loc>http://yoursite.com/2016/12/18/2016-12-18-git-study/</loc>
     
     <lastmod>2017-05-16T04:37:44.343Z</lastmod>
     
@@ -142,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/12/18/2016-12-18-git-study/</loc>
+    <loc>http://yoursite.com/2016/12/22/2016-12-22-sport-architecture/</loc>
     
     <lastmod>2017-05-16T04:37:44.343Z</lastmod>
     
