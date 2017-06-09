@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-07T01:43:29.792Z</updated>
+  <updated>2017-06-09T11:18:48.727Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/04/10/2017-4-10-webview/"/>
     <id>http://yoursite.com/2017/04/10/2017-4-10-webview/</id>
     <published>2017-04-10T11:39:07.000Z</published>
-    <updated>2017-06-07T01:43:29.792Z</updated>
+    <updated>2017-06-09T11:18:48.727Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>WebView开发教程…持续整理中…</p>
@@ -36,7 +36,7 @@
 <h1 id="WebSettings"><a href="#WebSettings" class="headerlink" title="WebSettings"></a><a href="https://developer.android.com/reference/android/webkit/WebSettings.html" target="_blank" rel="external">WebSettings</a></h1><blockquote>
 <p>Manages settings state for a WebView. When a WebView is first created, it obtains a set of default settings. These default settings will be returned from any getter call. A WebSettings object obtained from WebView.getSettings() is tied to the life of the WebView. If a WebView has been destroyed, any method call on WebSettings will throw an IllegalStateException</p>
 </blockquote>
-<h1 id="WebViewClient"><a href="#WebViewClient" class="headerlink" title="WebViewClient"></a><a href="https://developer.android.com/reference/android/webkit/WebViewClient.html" target="_blank" rel="external">WebViewClient</a></h1><h1 id="WebChromeClient5"><a href="#WebChromeClient5" class="headerlink" title="WebChromeClient5"></a><a href="https://developer.android.com/reference/android/webkit/WebChromeClient.html" target="_blank" rel="external">WebChromeClient5</a></h1><h1 id="JavaScriptInterface"><a href="#JavaScriptInterface" class="headerlink" title="JavaScriptInterface"></a><a href="https://developer.android.com/reference/android/webkit/JavascriptInterface.html" target="_blank" rel="external">JavaScriptInterface</a></h1><blockquote>
+<h1 id="WebViewClient"><a href="#WebViewClient" class="headerlink" title="WebViewClient"></a><a href="https://developer.android.com/reference/android/webkit/WebViewClient.html" target="_blank" rel="external">WebViewClient</a></h1><h1 id="WebChromeClient"><a href="#WebChromeClient" class="headerlink" title="WebChromeClient"></a><a href="https://developer.android.com/reference/android/webkit/WebChromeClient.html" target="_blank" rel="external">WebChromeClient</a></h1><h1 id="JavaScriptInterface"><a href="#JavaScriptInterface" class="headerlink" title="JavaScriptInterface"></a><a href="https://developer.android.com/reference/android/webkit/JavascriptInterface.html" target="_blank" rel="external">JavaScriptInterface</a></h1><blockquote>
 <p>Annotation that allows exposing methods to JavaScript. Starting from API level JELLY_BEAN_MR1 and above, only methods explicitly marked with this annotation are available to the Javascript code. See addJavascriptInterface(Object, String) for more information about it.</p>
 </blockquote>
 <p>该注解允许将指定的方法公开给 JavaScript 调用，要求 <code>Api&gt;=17</code>，否则在 js 代码中是无法调用 android 端的方法的。<br>这个是结合 <code>addJavascriptInterface</code> 来使用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * JS调用</div><div class="line"> * 如果 targetSdkVersion &gt;=17，一定要加注解，否则JS无法调用这个方法</div><div class="line"> */</div><div class="line"><span class="meta">@JavascriptInterface</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jsCallNative</span><span class="params">(String jsParasJson)</span> </span>&#123;</div><div class="line">    IMLogger.d(<span class="string">"jsCallNative jsParasJson="</span> + jsParasJson);</div><div class="line">    sendMessageToManager(WebViewManager.MSG_JS_CALL, jsParasJson);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
