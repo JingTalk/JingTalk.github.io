@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-09T11:18:48.727Z</updated>
+  <updated>2017-06-14T12:36:54.505Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/04/10/2017-4-10-webview/"/>
     <id>http://yoursite.com/2017/04/10/2017-4-10-webview/</id>
     <published>2017-04-10T11:39:07.000Z</published>
-    <updated>2017-06-09T11:18:48.727Z</updated>
+    <updated>2017-06-14T12:36:54.505Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>WebView开发教程…持续整理中…</p>
@@ -32,18 +32,210 @@
 <li>WebChromeClient</li>
 <li>JavaScriptInterface</li>
 </ol>
+<blockquote>
+<p>deprecated Api不再注明出来<br>所有没有写方法返回值的 Api，默认返回值为空类型 Void</p>
+</blockquote>
 <a id="more"></a>
+<h1 id="WebView-介绍"><a href="#WebView-介绍" class="headerlink" title="WebView 介绍"></a><a href="https://developer.android.com/reference/android/webkit/WebView.html" target="_blank" rel="external">WebView</a> 介绍</h1><h2 id="继承关系"><a href="#继承关系" class="headerlink" title="继承关系"></a>继承关系</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">java.lang.Object</div><div class="line">   ↳	android.view.View</div><div class="line"> 	   ↳	android.view.ViewGroup</div><div class="line"> 	 	   ↳	android.widget.AbsoluteLayout</div><div class="line"> 	 	 	   ↳	android.webkit.WebView</div></pre></td></tr></table></figure>
+<h2 id="WebView-常用-Api-介绍"><a href="#WebView-常用-Api-介绍" class="headerlink" title="WebView 常用 Api 介绍"></a>WebView 常用 Api 介绍</h2><ul>
+<li><strong>addJavascriptInterface(Object object, String name)</strong></li>
+<li><strong>boolean canGoBack()</strong></li>
+<li><strong>boolean canGoBackOrForward(int steps)</strong></li>
+<li><strong>boolean canGoForward()</strong></li>
+<li><strong>clearCache(boolean includeDiskFiles)</strong></li>
+<li><strong>clearClientCertPreferences(Runnable onCleared)</strong></li>
+<li><strong>clearFormData()</strong></li>
+<li><strong>clearHistory()</strong></li>
+<li><strong>clearMatches()</strong></li>
+<li><strong>clearSslPreferences()</strong></li>
+<li><strong>computeScroll()</strong></li>
+<li><strong>WebBackForwardList copyBackForwardList()</strong></li>
+<li><strong>PrintDocumentAdapter createPrintDocumentAdapter(String documentName)</strong></li>
+<li><strong>WebMessagePort[] createWebMessageChannel()</strong></li>
+<li><strong>destroy()</strong></li>
+<li><strong>boolean dispatchKeyEvent(KeyEvent event)</strong></li>
+<li><strong>String findAddress(String addr)</strong></li>
+<li><strong>int findAll(String find)</strong></li>
+<li><strong>findAllAsync(String find)</strong></li>
+<li><strong>View findFocus()</strong></li>
+<li><strong>findNext(boolean forward)</strong></li>
+<li><strong>flingScroll(int vx, int vy)</strong></li>
+<li><strong>documentHasImages(Message response)</strong></li>
+<li><strong>enableSlowWholeDocumentDraw()</strong></li>
+<li><strong>evaluateJavascript(String script, ValueCallback<string> resultCallback)</string></strong></li>
+<li><strong>AccessibilityNodeProvider getAccessibilityNodeProvider()</strong></li>
+<li><strong>CharSequence    getAccessibilityClassName()</strong></li>
+<li><strong>SslCertificate getCertificate()</strong></li>
+<li><strong>int getContentHeight()</strong></li>
+<li><strong>Bitmap getFavicon()</strong></li>
+<li><strong>Handler getHandler()</strong></li>
+<li><strong>WebView.HitTestResult getHitTestResult()</strong></li>
+<li><strong>String getOriginalUrl()</strong></li>
+<li><strong>int getProgress()</strong></li>
+<li><strong>WebSettings getSettings()</strong></li>
+<li><strong>String getTitle()</strong></li>
+<li><strong>String getUrl()</strong></li>
+<li><strong>goBack()</strong></li>
+<li><strong>goBackOrForward(int steps)</strong></li>
+<li><strong>goForward()</strong></li>
+<li><strong>invokeZoomPicker()</strong></li>
+<li><strong>boolean isPrivateBrowsingEnabled()</strong></li>
+<li><strong>loadData(String data, String mimeType, String encoding)</strong></li>
+<li><strong>loadDataWithBaseURL(String baseUrl, String data, String mimeType, String encoding, String historyUrl)</strong></li>
+<li><strong>loadUrl(String url)</strong></li>
+<li><strong>loadUrl(String url, Map<string, string=""> additionalHttpHeaders)</string,></strong></li>
+<li><strong>InputConnection    onCreateInputConnection(EditorInfo outAttrs)</strong></li>
+<li><strong>boolean onDragEvent(DragEvent event)</strong></li>
+<li><strong>onFinishTemporaryDetach()</strong></li>
+<li><strong>onGenericMotionEvent(MotionEvent event)</strong></li>
+<li><strong>onHoverEvent(MotionEvent event)</strong></li>
+<li><strong>onKeyDown(int keyCode, KeyEvent event)</strong></li>
+<li><strong>    onKeyMultiple(int keyCode, int repeatCount, KeyEvent event)</strong></li>
+<li><strong>onKeyUp(int keyCode, KeyEvent event)</strong></li>
+<li><strong>onPause()</strong></li>
+<li><strong>    onProvideVirtualStructure(ViewStructure structure)</strong></li>
+<li><strong>onResume()</strong></li>
+<li><strong>onStartTemporaryDetach()</strong></li>
+<li><strong>boolean onTouchEvent(MotionEvent event)</strong></li>
+</ul>
+<hr>
+<hr>
+<hr>
+<hr>
 <h1 id="WebSettings"><a href="#WebSettings" class="headerlink" title="WebSettings"></a><a href="https://developer.android.com/reference/android/webkit/WebSettings.html" target="_blank" rel="external">WebSettings</a></h1><blockquote>
 <p>Manages settings state for a WebView. When a WebView is first created, it obtains a set of default settings. These default settings will be returned from any getter call. A WebSettings object obtained from WebView.getSettings() is tied to the life of the WebView. If a WebView has been destroyed, any method call on WebSettings will throw an IllegalStateException</p>
 </blockquote>
-<h1 id="WebViewClient"><a href="#WebViewClient" class="headerlink" title="WebViewClient"></a><a href="https://developer.android.com/reference/android/webkit/WebViewClient.html" target="_blank" rel="external">WebViewClient</a></h1><h1 id="WebChromeClient"><a href="#WebChromeClient" class="headerlink" title="WebChromeClient"></a><a href="https://developer.android.com/reference/android/webkit/WebChromeClient.html" target="_blank" rel="external">WebChromeClient</a></h1><h1 id="JavaScriptInterface"><a href="#JavaScriptInterface" class="headerlink" title="JavaScriptInterface"></a><a href="https://developer.android.com/reference/android/webkit/JavascriptInterface.html" target="_blank" rel="external">JavaScriptInterface</a></h1><blockquote>
+<p>WebSettings 是当 WebView 初次创建的时候默认创建的一个用来管理配置状态的类（一个配置集合，里面包含很多 set/get 方法），如果 WebView 销毁掉了，调用 WebSettings 里面的任何方法都是非法的。</p>
+<h2 id="获取-WebSettings"><a href="#获取-WebSettings" class="headerlink" title="获取 WebSettings"></a>获取 WebSettings</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WebSettings webSetting = mWebView.getSettings();</div></pre></td></tr></table></figure>
+<h2 id="WebSettings-常用-Api-介绍"><a href="#WebSettings-常用-Api-介绍" class="headerlink" title="WebSettings 常用 Api 介绍"></a>WebSettings 常用 Api 介绍</h2><blockquote>
+<p>WebSettings 配置类里面包含大量的 get/set 方法，所以下面 Api 中只介绍 set 方法</p>
+</blockquote>
+<ul>
+<li><strong>boolean enableSmoothTransition()</strong></li>
+<li><strong>setAllowContentAccess(boolean allow)</strong></li>
+<li><strong>setAllowFileAccess(boolean allow)</strong></li>
+<li><strong>setAllowFileAccessFromFileURLs(boolean flag)</strong></li>
+<li><strong>setAllowUniversalAccessFromFileURLs(boolean flag)</strong></li>
+<li><strong>setAppCacheEnabled(boolean flag)</strong></li>
+<li><strong>setAppCachePath(String appCachePath)</strong></li>
+<li><strong>setBlockNetworkImage(boolean flag)</strong></li>
+<li><strong>setBlockNetworkLoads(boolean flag)</strong></li>
+<li><strong>setBuiltInZoomControls(boolean enabled)</strong></li>
+<li><strong>setCacheMode(int mode)</strong></li>
+<li><strong>setCursiveFontFamily(String font)</strong></li>
+<li><strong>setDatabaseEnabled(boolean flag)</strong></li>
+<li><strong>setDefaultFixedFontSize(int size)</strong></li>
+<li><strong>setDefaultFontSize(int size)</strong></li>
+<li><strong>setDefaultTextEncodingName(String encoding)</strong></li>
+<li><strong>setDisabledActionModeMenuItems(int menuItems)</strong></li>
+<li><strong>setDisplayZoomControls(boolean enabled)</strong></li>
+<li><strong>setDomStorageEnabled(boolean flag)</strong></li>
+<li><strong>setFantasyFontFamily(String font)</strong></li>
+<li><strong>setFixedFontFamily(String font)</strong></li>
+<li><strong>setGeolocationEnabled(boolean flag)</strong></li>
+<li><strong>setJavaScriptCanOpenWindowsAutomatically(boolean flag)</strong></li>
+<li><strong>setJavaScriptEnabled(boolean flag)</strong></li>
+<li><strong>setLayoutAlgorithm(WebSettings.LayoutAlgorithm l)</strong></li>
+<li><strong>setLoadWithOverviewMode(boolean overview)</strong></li>
+<li><strong>setLoadsImagesAutomatically(boolean flag)</strong></li>
+<li><strong>setMediaPlaybackRequiresUserGesture(boolean require)</strong></li>
+<li><strong>setMinimumFontSize(int size)</strong></li>
+<li><strong>setMinimumLogicalFontSize(int size)</strong></li>
+<li><strong>setMixedContentMode(int mode)</strong></li>
+<li><strong>setNeedInitialFocus(boolean flag)</strong></li>
+<li><strong>setOffscreenPreRaster(boolean enabled)</strong></li>
+<li><strong>setSansSerifFontFamily(String font)</strong></li>
+<li><strong>setSaveFormData(boolean save)</strong></li>
+<li><strong>setSerifFontFamily(String font)</strong></li>
+<li><strong>setStandardFontFamily(String font)</strong></li>
+<li><strong>setSupportMultipleWindows(boolean support)</strong></li>
+<li><strong>setSupportZoom(boolean support)</strong></li>
+<li><strong>setTextZoom(int textZoom)</strong></li>
+<li><strong>setUseWideViewPort(boolean use)</strong></li>
+<li><strong>setUserAgentString(String ua)</strong></li>
+<li><strong>boolean supportMultipleWindows()</strong></li>
+<li><strong>boolean supportZoom()</strong></li>
+</ul>
+<h1 id="WebViewClient"><a href="#WebViewClient" class="headerlink" title="WebViewClient"></a><a href="https://developer.android.com/reference/android/webkit/WebViewClient.html" target="_blank" rel="external">WebViewClient</a></h1><p>WebView 代理，它主要是用来处理网页与浏览器交互时，处理各种通知和请求事件的。<br>实际使用过程中，开发者继承实现一个子类调用接口 <code>setWebViewClient(WebViewClient client)</code> 即可。</p>
+<h2 id="可重写方法说明"><a href="#可重写方法说明" class="headerlink" title="可重写方法说明"></a>可重写方法说明</h2><ul>
+<li><strong>onPageStarted(WebView view, String url, Bitmap favicon)</strong><br>view<br>url<br>favicon</li>
+<li><strong>onPageFinished(WebView view, String url)</strong>:</li>
+<li><strong>onPageCommitVisible(WebView view, String url)</strong>:</li>
+<li><strong>boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request)</strong></li>
+<li><strong>boolean shouldOverrideKeyEvent(WebView view, KeyEvent event)</strong></li>
+<li><strong>WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request)</strong></li>
+<li><strong>onUnhandledKeyEvent(WebView view, KeyEvent event)</strong></li>
+<li><strong>onTooManyRedirects(WebView view, Message cancelMsg, Message continueMsg)</strong></li>
+<li><strong>onScaleChanged(WebView view, float oldScale, float newScale)</strong></li>
+<li><strong>onLoadResource(WebView view, String url)</strong></li>
+<li><strong>onFormResubmission(WebView view, Message dontResend, Message resend)</strong></li>
+<li><strong>doUpdateVisitedHistory(WebView view, String url, boolean isReload)</strong></li>
+<li><strong>onReceivedClientCertRequest(WebView view, ClientCertRequest request)</strong></li>
+<li><strong>onReceivedError(WebView view, WebResourceRequest request, WebResourceError error)</strong></li>
+<li><strong>onReceivedHttpAuthRequest(WebView view, HttpAuthHandler handler, String host, String realm)</strong></li>
+<li><strong>onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse)</strong></li>
+<li><strong>onReceivedLoginRequest(WebView view, String realm, String account, String args)</strong></li>
+<li><strong>onReceivedSslError(WebView view, SslErrorHandler handler, SslError error)</strong></li>
+</ul>
+<h1 id="WebChromeClient"><a href="#WebChromeClient" class="headerlink" title="WebChromeClient"></a><a href="https://developer.android.com/reference/android/webkit/WebChromeClient.html" target="_blank" rel="external">WebChromeClient</a></h1><p>WebView chrome 代理，相对于 WebViewClient，它主要是用来处理 js，网站信息，加载进度等浏览器相关的事件。</p>
+<h2 id="可重写方法说明-1"><a href="#可重写方法说明-1" class="headerlink" title="可重写方法说明"></a>可重写方法说明</h2><ul>
+<li><strong>Bitmap getDefaultVideoPoster()</strong></li>
+<li><strong>View getVideoLoadingProgressView()</strong></li>
+<li><strong>getVisitedHistory(ValueCallback<string[]> callback)</string[]></strong></li>
+<li><strong>onCloseWindow(WebView window)</strong></li>
+<li><strong>boolean onConsoleMessage(ConsoleMessage consoleMessage)</strong></li>
+<li><strong>boolean onCreateWindow(WebView view, boolean isDialog, boolean isUserGesture, Message resultMsg)</strong></li>
+<li><strong>onGeolocationPermissionsHidePrompt()</strong></li>
+<li><strong>onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback)</strong></li>
+<li><strong>onHideCustomView()</strong></li>
+<li><strong>onShowCustomView(View view, WebChromeClient.CustomViewCallback callback)</strong></li>
+<li><strong>onJsAlert(WebView view, String url, String message, JsResult result)</strong></li>
+<li><strong>onJsBeforeUnload(WebView view, String url, String message, JsResult result)</strong></li>
+<li><strong>onJsConfirm(WebView view, String url, String message, JsResult result)</strong></li>
+<li><strong>onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result)</strong></li>
+<li><strong>onJsTimeout()</strong></li>
+<li><strong>onPermissionRequest(PermissionRequest request)</strong></li>
+<li><strong>onPermissionRequestCanceled(PermissionRequest request)</strong></li>
+<li><strong>onProgressChanged(WebView view, int newProgress)</strong></li>
+<li><strong>onReceivedIcon(WebView view, Bitmap icon)</strong></li>
+<li><strong>onReceivedTitle(WebView view, String title)</strong></li>
+<li><strong>onReceivedTouchIconUrl(WebView view, String url, boolean precomposed)</strong></li>
+<li><strong>onRequestFocus(WebView view)</strong></li>
+<li><strong>boolean onShowFileChooser(WebView webView, ValueCallback<uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams)</uri[]></strong></li>
+</ul>
+<h1 id="JS调用-JavaScriptInterface"><a href="#JS调用-JavaScriptInterface" class="headerlink" title="JS调用 - JavaScriptInterface"></a>JS调用 - <a href="https://developer.android.com/reference/android/webkit/JavascriptInterface.html" target="_blank" rel="external">JavaScriptInterface</a></h1><blockquote>
 <p>Annotation that allows exposing methods to JavaScript. Starting from API level JELLY_BEAN_MR1 and above, only methods explicitly marked with this annotation are available to the Javascript code. See addJavascriptInterface(Object, String) for more information about it.</p>
 </blockquote>
-<p>该注解允许将指定的方法公开给 JavaScript 调用，要求 <code>Api&gt;=17</code>，否则在 js 代码中是无法调用 android 端的方法的。<br>这个是结合 <code>addJavascriptInterface</code> 来使用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * JS调用</div><div class="line"> * 如果 targetSdkVersion &gt;=17，一定要加注解，否则JS无法调用这个方法</div><div class="line"> */</div><div class="line"><span class="meta">@JavascriptInterface</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jsCallNative</span><span class="params">(String jsParasJson)</span> </span>&#123;</div><div class="line">    IMLogger.d(<span class="string">"jsCallNative jsParasJson="</span> + jsParasJson);</div><div class="line">    sendMessageToManager(WebViewManager.MSG_JS_CALL, jsParasJson);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在 js 中的调用逻辑如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">* js调用android方法</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsCallJavaByInterface</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    AndroidObj.jsCallNative(arg);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上面的 <code>AndroidObj</code> 实际上是一个 Android interface对象，这面这个 js 方法被调用的时候，要确保本地这个对象已经创建，否则会调用失败。<br>在初始化 WebView 的时候，可以使用<code>addJavascriptInterface</code>显示的创建一个<code>AndroidObj</code>对象，这个对像可供 js 端调用。<br>该函数的声明及调用如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 声明</span></div><div class="line"><span class="comment">// void addJavascriptInterface (Object object, String name)</span></div><div class="line"><span class="comment">// 使用</span></div><div class="line">mWebView.addJavascriptInterface(WebViewWithFavActivity.<span class="keyword">this</span>, <span class="string">"AndroidObj"</span>);</div></pre></td></tr></table></figure></p>
-<p><code>addJavascriptInterface</code>的第一个参数是一个<code>Object</code>，它与第二个参数存在类成员的关系，比如上面的<code>jsCallNative</code>方法，是写在<code>WebViewWithFavActivity</code>中的。</p>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
+<p>该注解允许将指定的方法公开给 JavaScript 调用，要求 <code>Api&gt;=17</code>，否则在 js 代码中是无法调用 android 端的方法的。<br>这个是结合 <code>addJavascriptInterface</code> 来使用。</p>
+<h2 id="WebView-调用-js-方法"><a href="#WebView-调用-js-方法" class="headerlink" title="WebView 调用 js 方法"></a>WebView 调用 js 方法</h2><p>WebView 调用 js 主要有两种方法：</p>
+<ol>
+<li><p>loadUrl - 无返回值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String call = <span class="string">"javascript:IMSDKCallJs()"</span>;</div><div class="line">webView.loadUrl(call);</div></pre></td></tr></table></figure>
+</li>
+<li><p>evaluateJavascript - 带有回调<br>这个 api 只有在 KITKAT 以上才能使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@TargetApi</span>(Build.VERSION_CODES.KITKAT)</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">evaluateJavaScript</span><span class="params">()</span></span>&#123;</div><div class="line">    mWebView.evaluateJavascript(<span class="string">"IMSDKCallJs()"</span>, <span class="keyword">new</span> ValueCallback&lt;String&gt;() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceiveValue</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">            Log.d(<span class="string">"returnStr:"</span>, s);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>带入参的 js 调用<br>在 java 层调用 js 函数要入参时如果使用 json 结构体，一定要注意转义，否则会调用失败。  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 调用 js 方法名为 IMSDKCallJs 的函数，参数为 String 类型的 json串</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">callJs</span><span class="params">(<span class="keyword">final</span> String parasJson)</span> </span>&#123;</div><div class="line">    IMLogger.d(<span class="string">"callJs parasJson : "</span> + parasJson);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (mWebView == <span class="keyword">null</span>) &#123;</div><div class="line">        IMLogger.d(<span class="string">"webView instance is null"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    runOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="comment">// 拼装 javascript 格式的方法调用</span></div><div class="line">            StringBuilder js = <span class="keyword">new</span> StringBuilder(<span class="string">"IMSDKCallJs"</span>);</div><div class="line">            js.append(<span class="string">"('"</span>).append(parasJson).append(<span class="string">"')"</span>);</div><div class="line"></div><div class="line">            <span class="comment">// 异步调用，避免阻塞</span></div><div class="line">            <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) &#123;</div><div class="line">                mWebView.evaluateJavascript(js.toString(), <span class="keyword">new</span> ValueCallback&lt;String&gt;() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceiveValue</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">                        notifyWebViewJS(s, CODE_WEBVIEW_CALLJS_RETURN);</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                mWebView.loadUrl(<span class="string">"javascript:"</span> + js.toString());</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在拼装 parasJson 的时候要注意最终的效果是类似这种 “IMSDKCallJs(‘parasJson’)”，这里注意单引号的使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">String text = <span class="string">"&#123;\"key3\":\"value3\",\"key2\":\"value2\",\"key1\":\"value1\"&#125;"</span>;</div><div class="line">JSONObject jsonObject = <span class="keyword">new</span> JSONObject();</div><div class="line">              <span class="keyword">try</span> &#123;</div><div class="line">                  jsonObject.put(<span class="string">"key1"</span>, <span class="string">"value1"</span>);</div><div class="line">                  jsonObject.put(<span class="string">"key2"</span>, <span class="string">"value2"</span>);</div><div class="line">                  jsonObject.put(<span class="string">"key3"</span>, <span class="string">"value3"</span>);</div><div class="line">              &#125; <span class="keyword">catch</span> (JSONException e) &#123;</div><div class="line">                  e.printStackTrace();</div><div class="line">              &#125;</div><div class="line">callJs(jsonObject.toString());</div></pre></td></tr></table></figure>
+<p>被调用的 js 方法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JS提供给Java调用的方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">IMSDKCallJs</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">		<span class="comment">// 获取 id 为 hello 的对象（这里是指整个页面）；再获取它的 html代码</span></div><div class="line">		<span class="built_in">document</span>.getElementById(<span class="string">"hello"</span>).innerHTML += (<span class="string">"&lt;br/&gt;"</span> + arg);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">IMSDKCallJs</span>(<span class="params"></span>) </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="js-调用-WebView-方法"><a href="#js-调用-WebView-方法" class="headerlink" title="js 调用 WebView 方法"></a>js 调用 WebView 方法</h2><ol>
+<li><p>申明可以被 js 调用的方法<br>使用注解JavascriptInterface  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JS调用 如果 targetSdkVersion &gt;=17，一定要加注解，否则JS无法调用这个方法</span></div><div class="line"><span class="meta">@JavascriptInterface</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jsCallNative</span><span class="params">(String jsParasJson)</span> </span>&#123;</div><div class="line">    IMLogger.d(<span class="string">"jsCallNative jsParasJson="</span> + jsParasJson);</div><div class="line">    sendMessageToManager(WebViewManager.MSG_JS_CALL, jsParasJson);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 返回值调用</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">jsCallNative</span><span class="params">()</span> </span>&#123;</div><div class="line">    sendMessageToManager(WebViewManager.MSG_JS_CALL, jsParasJson);</div><div class="line">    <span class="keyword">return</span> <span class="string">"java return value"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>注册 JavaScriptInterface<br>该函数的声明及调用如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 声明</span></div><div class="line"><span class="comment">// void addJavascriptInterface (Object object, String name)</span></div><div class="line"><span class="comment">// 使用</span></div><div class="line"><span class="comment">// 第一个参数是一个`Object`，它与第二个参数存在类成员的关系，比如上面的`jsCallNative`方法，是写在`WebViewActivity`中的</span></div><div class="line">mWebView.addJavascriptInterface(WebViewActivity.<span class="keyword">this</span>, <span class="string">"AndroidObj"</span>);</div></pre></td></tr></table></figure>
+<p>这个接口的作用是把 this 所代表的类映射为 js 中的 android 对象，它的引用名字是 <code>AndroidObj</code>，js 侧在调用 java 方法的时候，要确保本地这个对象已经创建，否则会调用失败。  </p>
+</li>
+<li><p>js 调用<br>在 js 中的调用逻辑如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// js调用android方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsCallJavaByInterface</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    AndroidObj.jsCallNative(arg);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// js调用android方法 带返回值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsCallJavaByInterface</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> str = AndroidObj.jsCallNative();</div><div class="line">    <span class="built_in">console</span>.log(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="全屏播放"><a href="#全屏播放" class="headerlink" title="全屏播放"></a>全屏播放</h1><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
 <li><a href="https://jiandanxinli.github.io/2016-08-31.html" target="_blank" rel="external">WebView 概述</a></li>
 <li><a href="https://developer.android.com/guide/webapps/webview.html" target="_blank" rel="external">Building Web Apps in WebView</a></li>
 </ul>
@@ -61,6 +253,9 @@
 &lt;li&gt;WebChromeClient&lt;/li&gt;
 &lt;li&gt;JavaScriptInterface&lt;/li&gt;
 &lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;deprecated Api不再注明出来&lt;br&gt;所有没有写方法返回值的 Api，默认返回值为空类型 Void&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -1392,7 +1587,7 @@ printf(&quot;Hello, Markdown.&quot;);
     <link href="http://yoursite.com/2015/11/21/2015-11-21-hello-hexo/"/>
     <id>http://yoursite.com/2015/11/21/2015-11-21-hello-hexo/</id>
     <published>2015-11-21T08:29:53.000Z</published>
-    <updated>2017-05-16T04:37:44.343Z</updated>
+    <updated>2017-06-14T08:56:05.096Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <a id="more"></a>
@@ -1406,6 +1601,8 @@ printf(&quot;Hello, Markdown.&quot;);
 <h2 id="npm-代理"><a href="#npm-代理" class="headerlink" title="npm 代理"></a>npm 代理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config <span class="built_in">set</span> https-proxy http://dev-proxy.web.com:8080</div><div class="line">npm config <span class="built_in">set</span> proxy http://dev-proxy.web.com:8080</div></pre></td></tr></table></figure>
 <h2 id="npm-安装"><a href="#npm-安装" class="headerlink" title="npm 安装"></a>npm 安装</h2><p>安装完<a href="http://nodejs.cn/" target="_blank" rel="external">node.js</a>后，在本地安装hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure></p>
 <p>然后下载hexoblog的源码，最后执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo s // 本地发表</div><div class="line">hexo g <span class="_">-d</span> // 发布到相应网站</div></pre></td></tr></table></figure></p>
+<h2 id="端口修改"><a href="#端口修改" class="headerlink" title="端口修改"></a>端口修改</h2><p>hexo s 默认使用的是 4000 端口，有时候使用这个还是无法浏览本地网页，这个时候就是需要修改端口了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">λ hexo s</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<p>修改端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">λ hexo s -p 3600</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:3600/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
     
