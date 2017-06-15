@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-14T12:36:54.505Z</updated>
+  <updated>2017-06-15T01:05:48.355Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/04/10/2017-4-10-webview/"/>
     <id>http://yoursite.com/2017/04/10/2017-4-10-webview/</id>
     <published>2017-04-10T11:39:07.000Z</published>
-    <updated>2017-06-14T12:36:54.505Z</updated>
+    <updated>2017-06-15T01:05:48.355Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>WebView开发教程…持续整理中…</p>
@@ -90,10 +90,10 @@
 <li><strong>onGenericMotionEvent(MotionEvent event)</strong></li>
 <li><strong>onHoverEvent(MotionEvent event)</strong></li>
 <li><strong>onKeyDown(int keyCode, KeyEvent event)</strong></li>
-<li><strong>    onKeyMultiple(int keyCode, int repeatCount, KeyEvent event)</strong></li>
+<li><strong>onKeyMultiple(int keyCode, int repeatCount, KeyEvent event)</strong></li>
 <li><strong>onKeyUp(int keyCode, KeyEvent event)</strong></li>
 <li><strong>onPause()</strong></li>
-<li><strong>    onProvideVirtualStructure(ViewStructure structure)</strong></li>
+<li><strong>onProvideVirtualStructure(ViewStructure structure)</strong></li>
 <li><strong>onResume()</strong></li>
 <li><strong>onStartTemporaryDetach()</strong></li>
 <li><strong>boolean onTouchEvent(MotionEvent event)</strong></li>
