@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-15T01:05:48.355Z</updated>
+  <updated>2017-06-15T01:14:39.201Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/04/10/2017-4-10-webview/"/>
     <id>http://yoursite.com/2017/04/10/2017-4-10-webview/</id>
     <published>2017-04-10T11:39:07.000Z</published>
-    <updated>2017-06-15T01:05:48.355Z</updated>
+    <updated>2017-06-15T01:14:39.201Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>WebView开发教程…持续整理中…</p>
@@ -97,11 +97,44 @@
 <li><strong>onResume()</strong></li>
 <li><strong>onStartTemporaryDetach()</strong></li>
 <li><strong>boolean onTouchEvent(MotionEvent event)</strong></li>
+<li><strong>boolean onTrackballEvent(MotionEvent event)</strong></li>
+<li><strong>onWindowFocusChanged(boolean hasWindowFocus)</strong></li>
+<li><strong>pageDown(boolean bottom)</strong></li>
+<li><strong>pageUp(boolean top)</strong></li>
+<li><strong>pauseTimers()</strong></li>
+<li><strong>boolean performLongClick()</strong></li>
+<li><strong>postUrl(String url, byte[] postData)</strong></li>
+<li><strong>postVisualStateCallback(long requestId, WebView.VisualStateCallback callback)</strong></li>
+<li><strong>postWebMessage(WebMessage message, Uri targetOrigin)</strong></li>
+<li><strong>reload()</strong></li>
+<li><strong>removeJavascriptInterface(String name)</strong></li>
+<li><strong>boolean requestChildRectangleOnScreen(View child, Rect rect, boolean immediate)</strong></li>
+<li><strong>boolean requestFocus(int direction, Rect previouslyFocusedRect)</strong></li>
+<li><strong>requestFocusNodeHref(Message hrefMsg)</strong></li>
+<li><strong>requestImageRef(Message msg)</strong></li>
+<li><strong>WebBackForwardList restoreState(Bundle inState)</strong></li>
+<li><strong>resumeTimers()</strong></li>
+<li><strong>WebBackForwardList saveState(Bundle outState)</strong></li>
+<li><strong>saveWebArchive(String filename)</strong></li>
+<li><strong>saveWebArchive(String basename, boolean autoname, ValueCallback<string> callback)</string></strong></li>
+<li><strong>setBackgroundColor(int color)</strong></li>
+<li><strong>setDownloadListener(DownloadListener listener)</strong></li>
+<li><strong>setFindListener(WebView.FindListener listener)</strong></li>
+<li><strong>setInitialScale(int scaleInPercent)</strong></li>
+<li><strong>setLayerType(int layerType, Paint paint)</strong></li>
+<li><strong>setLayoutParams(ViewGroup.LayoutParams params)</strong></li>
+<li><strong>setNetworkAvailable(boolean networkUp)</strong></li>
+<li><strong>setOverScrollMode(int mode)</strong></li>
+<li><strong>setScrollBarStyle(int style)</strong></li>
+<li><strong>setWebChromeClient(WebChromeClient client)</strong></li>
+<li><strong>setWebContentsDebuggingEnabled(boolean enabled)</strong></li>
+<li><strong>setWebViewClient(WebViewClient client)</strong></li>
+<li><strong>shouldDelayChildPressedState()</strong></li>
+<li><strong>stopLoading()</strong></li>
+<li><strong>zoomBy(float zoomFactor)</strong></li>
+<li><strong>boolean zoomIn()</strong></li>
+<li><strong>boolean zoomOut()</strong></li>
 </ul>
-<hr>
-<hr>
-<hr>
-<hr>
 <h1 id="WebSettings"><a href="#WebSettings" class="headerlink" title="WebSettings"></a><a href="https://developer.android.com/reference/android/webkit/WebSettings.html" target="_blank" rel="external">WebSettings</a></h1><blockquote>
 <p>Manages settings state for a WebView. When a WebView is first created, it obtains a set of default settings. These default settings will be returned from any getter call. A WebSettings object obtained from WebView.getSettings() is tied to the life of the WebView. If a WebView has been destroyed, any method call on WebSettings will throw an IllegalStateException</p>
 </blockquote>
