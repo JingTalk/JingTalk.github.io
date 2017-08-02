@@ -734,7 +734,7 @@
     <link href="http://yoursite.com/2017/03/06/2017-3-6-gradle/"/>
     <id>http://yoursite.com/2017/03/06/2017-3-6-gradle/</id>
     <published>2017-03-06T02:56:48.000Z</published>
-    <updated>2017-05-16T04:37:44.343Z</updated>
+    <updated>2017-08-02T03:22:49.866Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>本文主要讲解一下Gradle的使用方法及注意事项，方便查阅</p>
@@ -784,7 +784,44 @@
 <p>子module引用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">android &#123;</div><div class="line">    compileSdkVersion rootProject.ext.androidCompileSdkVersion</div><div class="line">    buildToolsVersion rootProject.ext.androidBuildToolsVersion</div><div class="line"></div><div class="line">    defaultConfig &#123;</div><div class="line">        minSdkVersion rootProject.ext.androidMinSdkVersion</div><div class="line">        targetSdkVersion rootProject.ext.androidTargetSdkVersion</div><div class="line">        versionCode rootProject.svnVersion("facebooklogin") // look here</div><div class="line">        versionName mVersionName</div><div class="line"></div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
 <h1 id="build-gradle-Module-app"><a href="#build-gradle-Module-app" class="headerlink" title="build.gradle[Module:app]"></a>build.gradle[Module:app]</h1><p>这个文件是app文件夹下这个Module的gradle配置文件，也可以算是整个项目最主要的gradle配置文件，比如自动打包debug，release，beta等环境，签名，多渠道打包，混淆等操作都可以在这里面写。</p>
 <h1 id="build-gradle-Module-xxx"><a href="#build-gradle-Module-xxx" class="headerlink" title="build.gradle[Module:xxx]"></a>build.gradle[Module:xxx]</h1><p>每一个Module都需要有一个gradle配置文件。</p>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p><a href="http://www.jianshu.com/p/20f6695a9bd5#" target="_blank" rel="external">Gradle语法及Build过程</a></p>
+<h1 id="Gradle-插件版本-vs-Gradle-版本"><a href="#Gradle-插件版本-vs-Gradle-版本" class="headerlink" title="Gradle 插件版本 vs Gradle 版本"></a>Gradle 插件版本 vs Gradle 版本</h1><p>整体版本可以通过 <code>File &gt; Project Structure &gt; Project</code> 查看</p>
+<p><img src="/images/201708/0802_gradle_version.png" alt=""></p>
+<h2 id="Gradle-插件版本"><a href="#Gradle-插件版本" class="headerlink" title="Gradle 插件版本"></a>Gradle 插件版本</h2><p>指定Gradle插件版本有两种方式:</p>
+<ul>
+<li>在Android Studio中选择File &gt; Project Structure &gt; Project菜单;</li>
+<li>在顶层build.gradle中修改配置<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath 'com.android.tools.build:gradle:2.2.0'</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Gradle-版本"><a href="#Gradle-版本" class="headerlink" title="Gradle 版本"></a>Gradle 版本</h2><p>指定 Gradle 版本也有两种方式：</p>
+<ul>
+<li>在Android Studio中选择 File &gt; Project Structure &gt; Project 来指定Gradle版本</li>
+<li>在gradle/wrapper/gradle-wrapper.properties文件中编辑Gradle引用地址：<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#Mon Mar 27 11:40:24 CST 2017</div><div class="line">distributionBase=GRADLE_USER_HOME</div><div class="line">distributionPath=wrapper/dists</div><div class="line">zipStoreBase=GRADLE_USER_HOME</div><div class="line">zipStorePath=wrapper/dists</div><div class="line">distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h2><p>下图是<a href="https://developer.android.com/studio/releases/gradle-plugin.html" target="_blank" rel="external">官网</a>提供的对应关系</p>
+<p><img src="/images/201708/0802_gradle_version.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">版本</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gradle-wrapper.properties</td>
+<td style="text-align:left">配置 Gradle 版本</td>
+</tr>
+<tr>
+<td style="text-align:left">build.gradle</td>
+<td style="text-align:left">配置 Gradle 插件版本</td>
+</tr>
+</tbody>
+</table>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
+<li><a href="http://www.jianshu.com/p/20f6695a9bd5#" target="_blank" rel="external">Gradle语法及Build过程</a></li>
+<li><a href="http://blog.csdn.net/jinrall/article/details/53220761" target="_blank" rel="external">Android Gradle和Gradle插件区别</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">
