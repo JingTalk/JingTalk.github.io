@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-26T08:06:58.826Z</updated>
+  <updated>2017-10-11T11:35:44.942Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工具使用汇总</title>
+    <link href="http://yoursite.com/2017/08/07/2017-8-7-tools/"/>
+    <id>http://yoursite.com/2017/08/07/2017-8-7-tools/</id>
+    <published>2017-08-07T12:04:22.000Z</published>
+    <updated>2017-10-11T11:35:44.942Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Google-搜索技巧"><a href="#Google-搜索技巧" class="headerlink" title="Google 搜索技巧"></a>Google 搜索技巧</h1><h2 id="精准搜索"><a href="#精准搜索" class="headerlink" title="精准搜索"></a>精准搜索</h2><p>加双引号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">“bad <span class="built_in">test</span> <span class="keyword">for</span> you”</div></pre></td></tr></table></figure></p>
+<h2 id="与"><a href="#与" class="headerlink" title="与"></a>与</h2><p>Google会自动假定一次搜索要求中所有的词之间都是一种 “和” 的关系。也就是，如果你输入两个词，它就会假定你所寻找的页面是包含这两个词的。它不会反馈给你仅包含其中一个词的页面。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">“Bob”和“Ted”</div><div class="line">相当于</div><div class="line">bob ted</div></pre></td></tr></table></figure></p>
+<h2 id="或-OR"><a href="#或-OR" class="headerlink" title="或 OR"></a>或 OR</h2><p>搜索包括一个或另一个词的页面，但不一定是都包括二者。</p>
+<p>当你输入这个“OR”的表示“或者”操作时，请确保所输入的要大写，否则Google会将它忽视为一个忽略的单词</p>
+<blockquote>
+<p><strong><em>关于这些“and”和“or”的词，Google会自动地将这些在你输入的搜索要求中的不重要的、普通的词忽略掉。这些被称作是“忽略的单词”，包括“and”、“the，”、“where”、“how”、“what”、“or”（所有字母皆为小写，还有其它一些类似的词——包括一些单独的数字或单独的字母（例如 “a”）。</em></strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">“how a toaster works”</div><div class="line">相当于</div><div class="line">“toaster works”</div></pre></td></tr></table></figure>
+<h2 id="搜索中包括的词"><a href="#搜索中包括的词" class="headerlink" title="搜索中包括的词"></a>搜索中包括的词</h2><p>你想要让这些一般的词包含在你的搜索要求内，你可以通过让Google必须在搜索中包含这些特定的词，使它不去排除“忽略的单词”。想要做到这点，你可以在你确实需要的词之前加上一个“+”符号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">“+how”</div></pre></td></tr></table></figure></p>
+<h2 id="搜索中不包括的词"><a href="#搜索中不包括的词" class="headerlink" title="搜索中不包括的词"></a>搜索中不包括的词</h2><p>有时你会想要通过排除一些包含特定词的页面来精炼你的搜索结果。你可以通过使用一个“-”号来去掉搜索结果中不想要包括在内的词；在你的搜索要求中任何之前加上了“-”符号的词都会自动地排除在搜索结果之外。同样地，也请记住在“-”符号之前留一个空格符。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">“bass -fish”</div></pre></td></tr></table></figure></p>
+<h2 id="搜索近似的词"><a href="#搜索近似的词" class="headerlink" title="搜索近似的词"></a>搜索近似的词</h2><p>Google能够让你搜索近似的词——叫做同义词——通过使用“~”符号。只要在想要搜索的词之前加上“~”符号，Google就会搜索所有包括这个词以及合适的近义词的页面。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~elderly</div></pre></td></tr></table></figure></p>
+<p>如果要只是列出近义词的页面，而不需要给出许多原先输入的那个词的页面，可以用“-”符号来连接“~”操作<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~keyword -keyword</div></pre></td></tr></table></figure></p>
+<h2 id="列出相似的页面"><a href="#列出相似的页面" class="headerlink" title="列出相似的页面"></a>列出相似的页面</h2><p>发现过一个网页是你确实很喜欢的，又想知道是否还有与它类似的其它网页呢？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">related:http://www.informit.com</div></pre></td></tr></table></figure></p>
+<h2 id="星号"><a href="#星号" class="headerlink" title="星号"></a>星号</h2><p>星号<em>是常用的通配符，也可以用在搜索中。百度不支持</em>号搜索指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">搜索*擎</div></pre></td></tr></table></figure></p>
+<h2 id="inurl"><a href="#inurl" class="headerlink" title="inurl"></a>inurl</h2><p>inurl: 指令用于搜索查询词出现在url 中的页面。bd和Google 都支持inurl 指令。inurl 指令支持中文和英文。</p>
+<p>比如搜索：inurl:搜索引擎优化返回的结果都是网址url 中包含“搜索引擎优化”的页面。</p>
+<p>由于关键词出现在url 中对排名有一定影响，使用inurl:搜索可以更准确地找到竞争对手。</p>
+<p>还有一些其它的供参考</p>
+<p><img src="/images/2017/1011_google_cmd.png" alt=""></p>
+<h2 id="搜索特定的事实"><a href="#搜索特定的事实" class="headerlink" title="搜索特定的事实"></a>搜索特定的事实</h2><p>要搜索一些客观事实<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">要查询圣弗朗西斯科的人口，则输入“人口 圣弗朗西斯科”。</div><div class="line"></div><div class="line">　　要查询马克·吐温在哪里出生，则输入“出生地 马克吐温”。</div><div class="line"></div><div class="line">　　要查询总统比尔·克林顿什么时候出生，则输入“生日 比尔克林顿”。</div><div class="line"></div><div class="line">　　要查询雷蒙德·钱德勒什么时候去世，则输入“去世 雷蒙德·钱德勒”。</div><div class="line"></div><div class="line">　　要查询谁是德国总统，则输入“总统 德国”。</div></pre></td></tr></table></figure></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.williamlong.info/archives/728.html" target="_blank" rel="external">十大高明的Google搜索技巧</a><br><a href="https://www.zhihu.com/question/20161362" target="_blank" rel="external">如何用好谷歌等搜索引擎？</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Google-搜索技巧&quot;&gt;&lt;a href=&quot;#Google-搜索技巧&quot; class=&quot;headerlink&quot; title=&quot;Google 搜索技巧&quot;&gt;&lt;/a&gt;Google 搜索技巧&lt;/h1&gt;&lt;h2 id=&quot;精准搜索&quot;&gt;&lt;a href=&quot;#精准搜索&quot; class=&quot;
+    
+    </summary>
+    
+      <category term="tools" scheme="http://yoursite.com/categories/tools/"/>
+    
+    
+      <category term="google" scheme="http://yoursite.com/tags/google/"/>
+    
+  </entry>
   
   <entry>
     <title>Activity 启动流程及其插件化</title>
@@ -1763,114 +1806,6 @@ Composition/Aggregation Principle 尽量使用合成/聚合，尽量不要使用
     
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown 语法记录</title>
-    <link href="http://yoursite.com/2016/12/02/2016-12-04-markdown/"/>
-    <id>http://yoursite.com/2016/12/02/2016-12-04-markdown/</id>
-    <published>2016-12-02T14:19:53.000Z</published>
-    <updated>2017-05-16T04:37:44.343Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<h1 id="Markdown简介"><a href="#Markdown简介" class="headerlink" title="Markdown简介"></a>Markdown简介</h1></blockquote>
-<p><a href="http://www.kancloud.cn/wizardforcel/markdown-simple-world/97373" target="_blank" rel="external">Markdown 简单的世界</a></p>
-<blockquote>
-<h1 id="标题说明一"><a href="#标题说明一" class="headerlink" title="标题说明一"></a>标题说明一</h1></blockquote>
-<p>注：# 和「一级标题」之间建议保留一个字符的空格，这是最标准的 Markdown 写法。</p>
-<a id="more"></a>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>####### 七级标题（最多支持六级标题）</p>
-<blockquote>
-<h1 id="标题说明二"><a href="#标题说明二" class="headerlink" title="标题说明二"></a>标题说明二</h1></blockquote>
-<h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题-1"><a href="#二级标题-1" class="headerlink" title="二级标题"></a>二级标题</h2><blockquote>
-<h1 id="列表说明"><a href="#列表说明" class="headerlink" title="列表说明"></a>列表说明</h1></blockquote>
-<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>列表格式也很常用，在 Markdown 中，你只需要在文字前面加上 -</p>
-<ul>
-<li>文本</li>
-<li>文本</li>
-<li>文本</li>
-</ul>
-<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>如果你希望有序列表，<br>也可以在文字前面加上 1. 2. 3.</p>
-<ol>
-<li>文本</li>
-<li>文本</li>
-<li>文本</li>
-</ol>
-<blockquote>
-<h1 id="引用说明"><a href="#引用说明" class="headerlink" title="引用说明"></a>引用说明</h1></blockquote>
-<p>在我们写作的时候经常需要引用他人的文字，这个时候引用这个格式就很有必要了，在 Markdown 中，你只需要在你希望引用的文字前面加上 &gt;</p>
-<blockquote>
-<p>一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p>
-</blockquote>
-<p>注：&gt; 和文本之间要保留一个字符的空格。</p>
-<p>嵌套引用如下：</p>
-<blockquote>
-<p>一级引用</p>
-<blockquote>
-<p>二级引用</p>
-</blockquote>
-<h1 id="链接说明"><a href="#链接说明" class="headerlink" title="链接说明"></a>链接说明</h1></blockquote>
-<h2 id="行内式"><a href="#行内式" class="headerlink" title="行内式"></a>行内式</h2><p>在 Markdown 中，插入链接不需要其他按钮，你只需要使用 <a href="链接地址">显示文本</a> 这样的语法即可</p>
-<p><a href="http://www.jianshu.com" target="_blank" rel="external">简书</a></p>
-<h2 id="参考式-注意下面的空行"><a href="#参考式-注意下面的空行" class="headerlink" title="参考式(注意下面的空行)"></a>参考式(注意下面的空行)</h2><p><a href="http://www.jianshu.com" target="_blank" rel="external">简书主页</a></p>
-<p><a href="http://www.jianshu.com/settings" target="_blank" rel="external">简书设置页</a></p>
-<blockquote>
-<h1 id="图片说明"><a href="#图片说明" class="headerlink" title="图片说明"></a>图片说明</h1></blockquote>
-<p>在 Markdown 中，插入图片不需要其他按钮，你只需要使用 <img src="图片链接地址" alt=""> 这样的语法即可</p>
-<p><img src="http://ww4.sinaimg.cn/bmiddle/aa397b7fjw1dzplsgpdw5j.jpg" alt=""></p>
-<p>注：插入图片的语法和链接的语法很像，只是前面多了一个 ！</p>
-<blockquote>
-<h1 id="粗体-斜体"><a href="#粗体-斜体" class="headerlink" title="粗体 斜体"></a>粗体 斜体</h1></blockquote>
-<p>Markdown 的粗体和斜体也非常简单，用两个 <em> 包含一段文本就是粗体的语法，用一个 </em> 包含一段文本就是斜体的语法</p>
-<p> <em>一盏灯</em>， 一片昏黄；<strong>一简书</strong>， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p>
-<blockquote>
-<h1 id="代码引用"><a href="#代码引用" class="headerlink" title="代码引用"></a>代码引用</h1></blockquote>
-<p>需要引用代码时，如果引用的语句只有一段，不分行，可以用 ` 将语句包起来。</p>
-<p>如果引用的语句为多行，可以将<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 一行代码引用（也可以当标记使用）</div><div class="line">`Hello World`</div><div class="line"></div><div class="line">## 多行代码引用</div></pre></td></tr></table></figure></p>
-<p>void main()<br>{<br>printf(“Hello, Markdown.”);<br>}<br>```</p>
-<h2 id="空格或TAB键实现"><a href="#空格或TAB键实现" class="headerlink" title="空格或TAB键实现"></a>空格或TAB键实现</h2><p>通过在每行加上4个空格或者一个制表符（如同写代码一样）</p>
-<p>四个空格</p>
-<pre><code>void main()
-{
-printf(&quot;Hello, Markdown.&quot;);
-}
-</code></pre><p>TAB键</p>
-<pre><code>public void test() {
-    ...
-}
-</code></pre><blockquote>
-<h1 id="段落说明"><a href="#段落说明" class="headerlink" title="段落说明"></a>段落说明</h1></blockquote>
-<p>段落的前后要有空行，所谓的空行是指没有文字内容。若想在段内强制换行的方式是使用两个以上空格加上回车（引用中换行省略回车）。</p>
-<blockquote>
-<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1></blockquote>
-<p>分割线的语法只需要另起一行，连续输入三个星号 <em>*</em> 或者 — 即可, 如下：</p>
-<h2 id=""><a href="#" class="headerlink" title="*"></a><em>*</em></h2><blockquote>
-<h1 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠\"></a>反斜杠\</h1><p>相当于反转义作用。使符号成为普通符号</p>
-<h1 id="换行符"><a href="#换行符" class="headerlink" title="换行符"></a>换行符</h1><p>一行结束时输入两个空格，如下：<br>[上一行没有打空格] 这是第一行<br>[上一行打了空格]这是第二行</p>
-<h1 id="高亮"><a href="#高亮" class="headerlink" title="高亮"></a>高亮</h1><p>在相应的text前后添加两个=即可</p>
-</blockquote>
-<p>==DYX==</p>
-<blockquote>
-<h1 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h1><p><del>DYX</del></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;h1 id=&quot;Markdown简介&quot;&gt;&lt;a href=&quot;#Markdown简介&quot; class=&quot;headerlink&quot; title=&quot;Markdown简介&quot;&gt;&lt;/a&gt;Markdown简介&lt;/h1&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.kancloud.cn/wizardforcel/markdown-simple-world/97373&quot;&gt;Markdown 简单的世界&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h1 id=&quot;标题说明一&quot;&gt;&lt;a href=&quot;#标题说明一&quot; class=&quot;headerlink&quot; title=&quot;标题说明一&quot;&gt;&lt;/a&gt;标题说明一&lt;/h1&gt;&lt;/blockquote&gt;
-&lt;p&gt;注：# 和「一级标题」之间建议保留一个字符的空格，这是最标准的 Markdown 写法。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="tools" scheme="http://yoursite.com/categories/tools/"/>
-    
-    
-      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
     
   </entry>
   
