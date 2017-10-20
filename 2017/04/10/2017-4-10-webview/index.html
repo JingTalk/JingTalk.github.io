@@ -115,7 +115,8 @@ JavaScriptInterface
 
 
 deprecated Api不再注明出来所有没有写方法返回值的 Api，默认返回值为空类型 Void">
-<meta property="og:updated_time" content="2017-06-15T01:14:39.201Z">
+<meta property="og:image" content="http://yoursite.com/images/2017/2017-10-16-softinput-edittext.jpg">
+<meta property="og:updated_time" content="2017-10-20T08:40:47.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebView 技术">
 <meta name="twitter:description" content="WebView开发教程…持续整理中…
@@ -129,6 +130,7 @@ JavaScriptInterface
 
 
 deprecated Api不再注明出来所有没有写方法返回值的 Api，默认返回值为空类型 Void">
+<meta name="twitter:image" content="http://yoursite.com/images/2017/2017-10-16-softinput-edittext.jpg">
 
 
 
@@ -475,12 +477,32 @@ deprecated Api不再注明出来所有没有写方法返回值的 Api，默认�
 </blockquote>
 <a id="more"></a>
 <h1 id="WebView-介绍"><a href="#WebView-介绍" class="headerlink" title="WebView 介绍"></a><a href="https://developer.android.com/reference/android/webkit/WebView.html" target="_blank" rel="external">WebView</a> 介绍</h1><h2 id="继承关系"><a href="#继承关系" class="headerlink" title="继承关系"></a>继承关系</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">java.lang.Object</div><div class="line">   ↳	android.view.View</div><div class="line"> 	   ↳	android.view.ViewGroup</div><div class="line"> 	 	   ↳	android.widget.AbsoluteLayout</div><div class="line"> 	 	 	   ↳	android.webkit.WebView</div></pre></td></tr></table></figure>
-<h2 id="WebView-常用-Api-介绍"><a href="#WebView-常用-Api-介绍" class="headerlink" title="WebView 常用 Api 介绍"></a>WebView 常用 Api 介绍</h2><ul>
+<h2 id="WebView-常用-Api-介绍"><a href="#WebView-常用-Api-介绍" class="headerlink" title="WebView 常用 Api 介绍"></a>WebView 常用 Api 介绍</h2><p><em>下面三个接口主要用于 WebView 与 JavaScript 交互，后面会介绍它的用法</em></p>
+<ul>
 <li><strong>addJavascriptInterface(Object object, String name)</strong></li>
+<li><strong>removeJavascriptInterface(String name)</strong></li>
+<li><strong>evaluateJavascript(String script, ValueCallback<string> resultCallback)</string></strong>  </li>
+</ul>
+<ul>
+<li><strong>loadUrl(String url)</strong></li>
+<li><strong>loadUrl(String url, Map<string, string=""> additionalHttpHeaders)</string,></strong></li>
+<li><strong>pageDown(boolean bottom)</strong></li>
+<li><strong>pageUp(boolean top)</strong></li>
 <li><strong>boolean canGoBack()</strong></li>
 <li><strong>boolean canGoBackOrForward(int steps)</strong></li>
 <li><strong>boolean canGoForward()</strong></li>
-<li><strong>clearCache(boolean includeDiskFiles)</strong></li>
+<li><strong>goBack()</strong></li>
+<li><strong>goBackOrForward(int steps)</strong></li>
+<li><strong>goForward()</strong></li>
+<li><strong>boolean performLongClick()</strong></li>
+<li><strong>reload()</strong></li>
+<li><strong>stopLoading()</strong></li>
+<li><strong>zoomBy(float zoomFactor)</strong></li>
+<li><strong>boolean zoomIn()</strong></li>
+<li><p><strong>boolean zoomOut()</strong></p>
+</li>
+<li><p><strong>clearCache(boolean includeDiskFiles)</strong></p>
+</li>
 <li><strong>clearClientCertPreferences(Runnable onCleared)</strong></li>
 <li><strong>clearFormData()</strong></li>
 <li><strong>clearHistory()</strong></li>
@@ -500,7 +522,6 @@ deprecated Api不再注明出来所有没有写方法返回值的 Api，默认�
 <li><strong>flingScroll(int vx, int vy)</strong></li>
 <li><strong>documentHasImages(Message response)</strong></li>
 <li><strong>enableSlowWholeDocumentDraw()</strong></li>
-<li><strong>evaluateJavascript(String script, ValueCallback<string> resultCallback)</string></strong></li>
 <li><strong>AccessibilityNodeProvider getAccessibilityNodeProvider()</strong></li>
 <li><strong>CharSequence    getAccessibilityClassName()</strong></li>
 <li><strong>SslCertificate getCertificate()</strong></li>
@@ -512,17 +533,16 @@ deprecated Api不再注明出来所有没有写方法返回值的 Api，默认�
 <li><strong>int getProgress()</strong></li>
 <li><strong>WebSettings getSettings()</strong></li>
 <li><strong>String getTitle()</strong></li>
-<li><strong>String getUrl()</strong></li>
-<li><strong>goBack()</strong></li>
-<li><strong>goBackOrForward(int steps)</strong></li>
-<li><strong>goForward()</strong></li>
-<li><strong>invokeZoomPicker()</strong></li>
+<li><p><strong>String getUrl()</strong></p>
+</li>
+<li><p><strong>invokeZoomPicker()</strong></p>
+</li>
 <li><strong>boolean isPrivateBrowsingEnabled()</strong></li>
 <li><strong>loadData(String data, String mimeType, String encoding)</strong></li>
-<li><strong>loadDataWithBaseURL(String baseUrl, String data, String mimeType, String encoding, String historyUrl)</strong></li>
-<li><strong>loadUrl(String url)</strong></li>
-<li><strong>loadUrl(String url, Map<string, string=""> additionalHttpHeaders)</string,></strong></li>
-<li><strong>InputConnection    onCreateInputConnection(EditorInfo outAttrs)</strong></li>
+<li><p><strong>loadDataWithBaseURL(String baseUrl, String data, String mimeType, String encoding, String historyUrl)</strong></p>
+</li>
+<li><p><strong>InputConnection    onCreateInputConnection(EditorInfo outAttrs)</strong></p>
+</li>
 <li><strong>boolean onDragEvent(DragEvent event)</strong></li>
 <li><strong>onFinishTemporaryDetach()</strong></li>
 <li><strong>onGenericMotionEvent(MotionEvent event)</strong></li>
@@ -536,17 +556,17 @@ deprecated Api不再注明出来所有没有写方法返回值的 Api，默认�
 <li><strong>onStartTemporaryDetach()</strong></li>
 <li><strong>boolean onTouchEvent(MotionEvent event)</strong></li>
 <li><strong>boolean onTrackballEvent(MotionEvent event)</strong></li>
-<li><strong>onWindowFocusChanged(boolean hasWindowFocus)</strong></li>
-<li><strong>pageDown(boolean bottom)</strong></li>
-<li><strong>pageUp(boolean top)</strong></li>
-<li><strong>pauseTimers()</strong></li>
-<li><strong>boolean performLongClick()</strong></li>
-<li><strong>postUrl(String url, byte[] postData)</strong></li>
+<li><p><strong>onWindowFocusChanged(boolean hasWindowFocus)</strong></p>
+</li>
+<li><p><strong>pauseTimers()</strong></p>
+</li>
+<li><p><strong>postUrl(String url, byte[] postData)</strong></p>
+</li>
 <li><strong>postVisualStateCallback(long requestId, WebView.VisualStateCallback callback)</strong></li>
-<li><strong>postWebMessage(WebMessage message, Uri targetOrigin)</strong></li>
-<li><strong>reload()</strong></li>
-<li><strong>removeJavascriptInterface(String name)</strong></li>
-<li><strong>boolean requestChildRectangleOnScreen(View child, Rect rect, boolean immediate)</strong></li>
+<li><p><strong>postWebMessage(WebMessage message, Uri targetOrigin)</strong></p>
+</li>
+<li><p><strong>boolean requestChildRectangleOnScreen(View child, Rect rect, boolean immediate)</strong></p>
+</li>
 <li><strong>boolean requestFocus(int direction, Rect previouslyFocusedRect)</strong></li>
 <li><strong>requestFocusNodeHref(Message hrefMsg)</strong></li>
 <li><strong>requestImageRef(Message msg)</strong></li>
@@ -568,10 +588,6 @@ deprecated Api不再注明出来所有没有写方法返回值的 Api，默认�
 <li><strong>setWebContentsDebuggingEnabled(boolean enabled)</strong></li>
 <li><strong>setWebViewClient(WebViewClient client)</strong></li>
 <li><strong>shouldDelayChildPressedState()</strong></li>
-<li><strong>stopLoading()</strong></li>
-<li><strong>zoomBy(float zoomFactor)</strong></li>
-<li><strong>boolean zoomIn()</strong></li>
-<li><strong>boolean zoomOut()</strong></li>
 </ul>
 <h1 id="WebSettings"><a href="#WebSettings" class="headerlink" title="WebSettings"></a><a href="https://developer.android.com/reference/android/webkit/WebSettings.html" target="_blank" rel="external">WebSettings</a></h1><blockquote>
 <p>Manages settings state for a WebView. When a WebView is first created, it obtains a set of default settings. These default settings will be returned from any getter call. A WebSettings object obtained from WebView.getSettings() is tied to the life of the WebView. If a WebView has been destroyed, any method call on WebSettings will throw an IllegalStateException</p>
@@ -650,16 +666,18 @@ deprecated Api不再注明出来所有没有写方法返回值的 Api，默认�
 </ul>
 <h1 id="WebChromeClient"><a href="#WebChromeClient" class="headerlink" title="WebChromeClient"></a><a href="https://developer.android.com/reference/android/webkit/WebChromeClient.html" target="_blank" rel="external">WebChromeClient</a></h1><p>WebView chrome 代理，相对于 WebViewClient，它主要是用来处理 js，网站信息，加载进度等浏览器相关的事件。</p>
 <h2 id="可重写方法说明-1"><a href="#可重写方法说明-1" class="headerlink" title="可重写方法说明"></a>可重写方法说明</h2><ul>
-<li><strong>Bitmap getDefaultVideoPoster()</strong></li>
-<li><strong>View getVideoLoadingProgressView()</strong></li>
-<li><strong>getVisitedHistory(ValueCallback<string[]> callback)</string[]></strong></li>
+<li><strong>Bitmap getDefaultVideoPoster()</strong>：返回一个视频没有播放时候所显示的缩略图</li>
+<li><strong>View getVideoLoadingProgressView()</strong>：返回一个视频加载过程中用于展示的 View</li>
+<li><strong>onHideCustomView()</strong>：全屏取消的时候回调</li>
+<li><p><strong>onShowCustomView(View view, WebChromeClient.CustomViewCallback callback)</strong>：视频全屏的时候回调</p>
+</li>
+<li><p><strong>getVisitedHistory(ValueCallback<string[]> callback)</string[]></strong></p>
+</li>
 <li><strong>onCloseWindow(WebView window)</strong></li>
 <li><strong>boolean onConsoleMessage(ConsoleMessage consoleMessage)</strong></li>
 <li><strong>boolean onCreateWindow(WebView view, boolean isDialog, boolean isUserGesture, Message resultMsg)</strong></li>
 <li><strong>onGeolocationPermissionsHidePrompt()</strong></li>
 <li><strong>onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback)</strong></li>
-<li><strong>onHideCustomView()</strong></li>
-<li><strong>onShowCustomView(View view, WebChromeClient.CustomViewCallback callback)</strong></li>
 <li><strong>onJsAlert(WebView view, String url, String message, JsResult result)</strong></li>
 <li><strong>onJsBeforeUnload(WebView view, String url, String message, JsResult result)</strong></li>
 <li><strong>onJsConfirm(WebView view, String url, String message, JsResult result)</strong></li>
@@ -674,7 +692,7 @@ deprecated Api不再注明出来所有没有写方法返回值的 Api，默认�
 <li><strong>onRequestFocus(WebView view)</strong></li>
 <li><strong>boolean onShowFileChooser(WebView webView, ValueCallback<uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams)</uri[]></strong></li>
 </ul>
-<h1 id="JS调用-JavaScriptInterface"><a href="#JS调用-JavaScriptInterface" class="headerlink" title="JS调用 - JavaScriptInterface"></a>JS调用 - <a href="https://developer.android.com/reference/android/webkit/JavascriptInterface.html" target="_blank" rel="external">JavaScriptInterface</a></h1><blockquote>
+<h1 id="Webview-js-互调-JavaScriptInterface"><a href="#Webview-js-互调-JavaScriptInterface" class="headerlink" title="Webview js 互调 - JavaScriptInterface"></a>Webview js 互调 - <a href="https://developer.android.com/reference/android/webkit/JavascriptInterface.html" target="_blank" rel="external">JavaScriptInterface</a></h1><blockquote>
 <p>Annotation that allows exposing methods to JavaScript. Starting from API level JELLY_BEAN_MR1 and above, only methods explicitly marked with this annotation are available to the Javascript code. See addJavascriptInterface(Object, String) for more information about it.</p>
 </blockquote>
 <p>该注解允许将指定的方法公开给 JavaScript 调用，要求 <code>Api&gt;=17</code>，否则在 js 代码中是无法调用 android 端的方法的。<br>这个是结合 <code>addJavascriptInterface</code> 来使用。</p>
@@ -706,9 +724,32 @@ deprecated Api不再注明出来所有没有写方法返回值的 Api，默认�
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// js调用android方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsCallJavaByInterface</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">    AndroidObj.jsCallNative(arg);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// js调用android方法 带返回值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsCallJavaByInterface</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> str = AndroidObj.jsCallNative();</div><div class="line">    <span class="built_in">console</span>.log(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h1 id="全屏播放"><a href="#全屏播放" class="headerlink" title="全屏播放"></a>全屏播放</h1><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
+<h1 id="视频支持"><a href="#视频支持" class="headerlink" title="视频支持"></a>视频支持</h1><blockquote>
+<p>In order to support inline HTML5 video in your application you need to have hardware acceleration turned on.</p>
+</blockquote>
+<p>视频播放需要打开硬件加速，经常有人在集成 WebView 的时候碰到播放视频的时候，有声音没有图像，一般是这个原因导致。</p>
+<h1 id="全屏播放"><a href="#全屏播放" class="headerlink" title="全屏播放"></a>全屏播放</h1><blockquote>
+<p>In order to support full screen — for video or other HTML content — you need to set a WebChromeClient and implement both onShowCustomView(View, WebChromeClient.CustomViewCallback) and onHideCustomView(). If the implementation of either of these two methods is missing then the web contents will not be allowed to enter full screen. Optionally you can implement getVideoLoadingProgressView() to customize the View displayed whilst a video is loading.</p>
+</blockquote>
+<p>WebView 对全屏播放的支持需要重写 WebChromeClient 类，如果不重写，WebView 在播放视频的时候，不会有全屏的按钮。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">mWebView.setWebChromeClient(<span class="keyword">new</span> WebChromeClient() &#123;</div><div class="line"></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> Bitmap <span class="title">getDefaultVideoPoster</span><span class="params">()</span> </span>&#123;</div><div class="line">                    <span class="keyword">if</span>(getActivity() == <span class="keyword">null</span>) &#123;</div><div class="line">                        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    <span class="keyword">return</span> BitmapFactory.decodeResource(getActivity().getApplicationContext().getResources(),</div><div class="line">                            R.drawable.video_poster);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onShowCustomView</span><span class="params">(View view,</span></span></div><div class="line">                                             WebChromeClient.CustomViewCallback callback) &#123;</div><div class="line">                    <span class="comment">// if a view already exists then immediately terminate the new one</span></div><div class="line">                    <span class="keyword">if</span> (mCustomView != <span class="keyword">null</span>) &#123;</div><div class="line">                        onHideCustomView();</div><div class="line">                        <span class="keyword">return</span>;</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    <span class="comment">// 1. Stash the current state</span></div><div class="line">                    mCustomView = view;</div><div class="line">                    mOriginalSystemUiVisibility = getActivity().getWindow().getDecorView().getSystemUiVisibility();</div><div class="line">                    mOriginalOrientation = getActivity().getRequestedOrientation();</div><div class="line"></div><div class="line">                    <span class="comment">// 2. Stash the custom view callback</span></div><div class="line">                    mCustomViewCallback = callback;</div><div class="line"></div><div class="line">                    <span class="comment">// 3. Add the custom view to the view hierarchy</span></div><div class="line">                    FrameLayout decor = (FrameLayout) getActivity().getWindow().getDecorView();</div><div class="line">                    decor.addView(mCustomView, <span class="keyword">new</span> FrameLayout.LayoutParams(</div><div class="line">                            ViewGroup.LayoutParams.MATCH_PARENT,</div><div class="line">                            ViewGroup.LayoutParams.MATCH_PARENT));</div><div class="line"></div><div class="line"></div><div class="line">                    <span class="comment">// 4. Change the state of the window</span></div><div class="line">                    getActivity().getWindow().getDecorView().setSystemUiVisibility(</div><div class="line">                            View.SYSTEM_UI_FLAG_LAYOUT_STABLE |</div><div class="line">                                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |</div><div class="line">                                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |</div><div class="line">                                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |</div><div class="line">                                    View.SYSTEM_UI_FLAG_FULLSCREEN |</div><div class="line">                                    View.SYSTEM_UI_FLAG_IMMERSIVE);</div><div class="line">                    getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onHideCustomView</span><span class="params">()</span> </span>&#123;</div><div class="line">                    <span class="comment">// 1. Remove the custom view</span></div><div class="line">                    FrameLayout decor = (FrameLayout) getActivity().getWindow().getDecorView();</div><div class="line">                    decor.removeView(mCustomView);</div><div class="line">                    mCustomView = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">                    <span class="comment">// 2. Restore the state to it's original form</span></div><div class="line">                    getActivity().getWindow().getDecorView()</div><div class="line">                            .setSystemUiVisibility(mOriginalSystemUiVisibility);</div><div class="line">                    getActivity().setRequestedOrientation(mOriginalOrientation);</div><div class="line"></div><div class="line">                    <span class="comment">// 3. Call the custom view callback</span></div><div class="line">                    mCustomViewCallback.onCustomViewHidden();</div><div class="line">                    mCustomViewCallback = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">                &#125;</div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
+<h1 id="Webview-无法显示图片问题"><a href="#Webview-无法显示图片问题" class="headerlink" title="Webview 无法显示图片问题"></a>Webview 无法显示图片问题</h1><p>当发现无法显示图片时，首先要考虑下面两个配置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 启用 js</span></div><div class="line">webSetting.setJavaScriptEnabled(<span class="keyword">true</span>);</div><div class="line"><span class="comment">// 关闭 image 显示阻塞</span></div><div class="line">webSetting.setBlockNetworkImage(<span class="keyword">false</span>);</div></pre></td></tr></table></figure></p>
+<p><strong>setBlockNetworkImage</strong> 默认值为 false；该方法一般用来解决网页加载缓慢的问题，网页开始加载的时候设为 true，在网页加载完毕后，再设为 false；</p>
+<p>如果设置了上面两个还是无法显示图片（http 类型），就需要考虑 <strong><em>https 站点加载  http 资源问题</em></strong>，这种问题多出现在 5.0 及以上机型中。<br>此处涉及接口 <a href="https://developer.android.com/reference/android/webkit/WebSettings.html#setMixedContentMode(int)" target="_blank" rel="external"><strong>setMixedContentMode</strong></a>, 简单理解就是是否允许 webview 在加载 https 站点时能否使用 http 资源，5.0 以上 Android webview 禁止在加载 https 站点时加载 http 图片资源，这样 就导致图片无法显示；</p>
+<blockquote>
+<p>Configures the WebView’s behavior when a secure origin attempts to load a resource from an insecure origin. By default, apps that target KITKAT or below default to MIXED_CONTENT_ALWAYS_ALLOW. Apps targeting LOLLIPOP default to MIXED_CONTENT_NEVER_ALLOW. The preferred and most secure mode of operation for the WebView is MIXED_CONTENT_NEVER_ALLOW and use of MIXED_CONTENT_ALWAYS_ALLOW is strongly discouraged.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 接口</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMixedContentMode</span> <span class="params">(<span class="keyword">int</span> mode)</span></span>;</div><div class="line"><span class="comment">// 取值</span></div><div class="line"></div><div class="line">MIXED_CONTENT_ALWAYS_ALLOW:       <span class="comment">// 允许使用 http 资源 （4.4 及以下机型默认配置）</span></div><div class="line">MIXED_CONTENT_COMPATIBILITY_MODE: <span class="comment">// 兼容模式（允许部分使用 http 资源，系统会帮忙阻挡一部分非常的 http 资源）</span></div><div class="line">MIXED_CONTENT_NEVER_ALLOW：       <span class="comment">//不允许（5.0 及以上机型默认配置）</span></div></pre></td></tr></table></figure>
+<h1 id="Webview-私有协议支持"><a href="#Webview-私有协议支持" class="headerlink" title="Webview 私有协议支持"></a>Webview 私有协议支持</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">mWebView.setWebViewClient(<span class="keyword">new</span> WebViewClient() &#123;</div><div class="line">            <span class="meta">@SuppressLint</span>(<span class="string">"NewApi"</span>)</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">shouldOverrideUrlLoading</span><span class="params">(WebView view, String url)</span> </span>&#123;</div><div class="line">                IMLogger.d(<span class="string">"loading url:"</span> + url);</div><div class="line">                <span class="keyword">if</span> (url.startsWith(<span class="string">"IMSDK:"</span>)) &#123;</div><div class="line">                    <span class="comment">// 私有协议处理。。。</span></div><div class="line"></div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url != <span class="keyword">null</span> &amp;&amp; url.startsWith(<span class="string">"mailto:"</span>) <span class="comment">// 新增邮箱、地图、电话、短信协议跳转</span></div><div class="line">                        || url.startsWith(<span class="string">"geo:"</span>) || url.startsWith(<span class="string">"tel:"</span>) || url.startsWith(<span class="string">"smsto:"</span>)) &#123;</div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, Uri.parse(url));</div><div class="line">                    startActivity(intent);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    view.loadUrl(url);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">      &#125;</div></pre></td></tr></table></figure>
+<h1 id="Webview-软件盘遮挡问题"><a href="#Webview-软件盘遮挡问题" class="headerlink" title="Webview 软件盘遮挡问题"></a>Webview 软件盘遮挡问题</h1><p><img src="/images/2017/2017-10-16-softinput-edittext.jpg" alt=""></p>
+<h1 id="TBS-X5-内核"><a href="#TBS-X5-内核" class="headerlink" title="TBS X5 内核"></a><a href="https://x5.tencent.com/tbs/guide.html#" target="_blank" rel="external">TBS X5 内核</a></h1><p>由 QQ浏览器 提供的第三方 WebView 组件，使用比较简单，而且可以在 X5 内核跟系统内核之间自由切换，具体见下面的<br><a href="https://x5.tencent.com/tbs/guide/sdkInit.html" target="_blank" rel="external">接入指南</a></p>
+<blockquote>
+<p>问题：目前对 64位 机器支持不是很好</p>
+</blockquote>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
 <li><a href="https://jiandanxinli.github.io/2016-08-31.html" target="_blank" rel="external">WebView 概述</a></li>
 <li><a href="https://developer.android.com/guide/webapps/webview.html" target="_blank" rel="external">Building Web Apps in WebView</a></li>
+<li><a href="https://www.diycode.cc/topics/383" target="_blank" rel="external">软键盘遮挡输入框问题…</a></li>
 </ul>
 
       
@@ -1019,7 +1060,7 @@ deprecated Api不再注明出来所有没有写方法返回值的 Api，默认�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WebView-简介"><span class="nav-number">1.</span> <span class="nav-text">WebView 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebView-介绍"><span class="nav-number">2.</span> <span class="nav-text">WebView 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承关系"><span class="nav-number">2.1.</span> <span class="nav-text">继承关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebView-常用-Api-介绍"><span class="nav-number">2.2.</span> <span class="nav-text">WebView 常用 Api 介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebSettings"><span class="nav-number">3.</span> <span class="nav-text">WebSettings</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-WebSettings"><span class="nav-number">3.1.</span> <span class="nav-text">获取 WebSettings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebSettings-常用-Api-介绍"><span class="nav-number">3.2.</span> <span class="nav-text">WebSettings 常用 Api 介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebViewClient"><span class="nav-number">4.</span> <span class="nav-text">WebViewClient</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可重写方法说明"><span class="nav-number">4.1.</span> <span class="nav-text">可重写方法说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebChromeClient"><span class="nav-number">5.</span> <span class="nav-text">WebChromeClient</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可重写方法说明-1"><span class="nav-number">5.1.</span> <span class="nav-text">可重写方法说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS调用-JavaScriptInterface"><span class="nav-number">6.</span> <span class="nav-text">JS调用 - JavaScriptInterface</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WebView-调用-js-方法"><span class="nav-number">6.1.</span> <span class="nav-text">WebView 调用 js 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-调用-WebView-方法"><span class="nav-number">6.2.</span> <span class="nav-text">js 调用 WebView 方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全屏播放"><span class="nav-number">7.</span> <span class="nav-text">全屏播放</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">8.</span> <span class="nav-text">引用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WebView-简介"><span class="nav-number">1.</span> <span class="nav-text">WebView 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebView-介绍"><span class="nav-number">2.</span> <span class="nav-text">WebView 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承关系"><span class="nav-number">2.1.</span> <span class="nav-text">继承关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebView-常用-Api-介绍"><span class="nav-number">2.2.</span> <span class="nav-text">WebView 常用 Api 介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebSettings"><span class="nav-number">3.</span> <span class="nav-text">WebSettings</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-WebSettings"><span class="nav-number">3.1.</span> <span class="nav-text">获取 WebSettings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebSettings-常用-Api-介绍"><span class="nav-number">3.2.</span> <span class="nav-text">WebSettings 常用 Api 介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebViewClient"><span class="nav-number">4.</span> <span class="nav-text">WebViewClient</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可重写方法说明"><span class="nav-number">4.1.</span> <span class="nav-text">可重写方法说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebChromeClient"><span class="nav-number">5.</span> <span class="nav-text">WebChromeClient</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可重写方法说明-1"><span class="nav-number">5.1.</span> <span class="nav-text">可重写方法说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Webview-js-互调-JavaScriptInterface"><span class="nav-number">6.</span> <span class="nav-text">Webview js 互调 - JavaScriptInterface</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WebView-调用-js-方法"><span class="nav-number">6.1.</span> <span class="nav-text">WebView 调用 js 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-调用-WebView-方法"><span class="nav-number">6.2.</span> <span class="nav-text">js 调用 WebView 方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视频支持"><span class="nav-number">7.</span> <span class="nav-text">视频支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全屏播放"><span class="nav-number">8.</span> <span class="nav-text">全屏播放</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Webview-无法显示图片问题"><span class="nav-number">9.</span> <span class="nav-text">Webview 无法显示图片问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Webview-私有协议支持"><span class="nav-number">10.</span> <span class="nav-text">Webview 私有协议支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Webview-软件盘遮挡问题"><span class="nav-number">11.</span> <span class="nav-text">Webview 软件盘遮挡问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TBS-X5-内核"><span class="nav-number">12.</span> <span class="nav-text">TBS X5 内核</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">13.</span> <span class="nav-text">引用</span></a></li></ol></div>
             
 
           </div>
